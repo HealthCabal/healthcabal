@@ -4,17 +4,188 @@ require_once("classes/config.php");
 
 if (isset($_REQUEST['post_slug'])) {
     $postSlug = $_GET['post_slug'];
-    $fetchPost = "SELECT * FROM  hc_posts WHERE post_slug = '$postSlug'";
+    $fetchPost = "SELECT * FROM  hc_posts, hc_users WHERE post_slug = '$postSlug' AND hc_posts.post_author = hc_users.ID";
     $result = $conn->query($fetchPost);
 }
 if ($conn->affected_rows > 0) {
     $postData = $result->fetch_array();
     require_once("inc/articleheader.php");
     require_once("classes/posts.php");
-    echo $postData['post_content'];
+?>
+    <div class="col-lg-12" id="topbar" style="background-color:mintcream; padding-top:0px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md">
+                    <br>
+                    <img src="https://tpc.googlesyndication.com/simgad/4917489439033249397">
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12" id="topbar" style="background-color: white;">
+        <div class="container">
+            <div class="row">
+                <?php
+                echo "<p class='h1 text-dark articleheader'>" . $postData['post_title'] . "</p>";
+                ?>
+            </div>
+            <div style="display: inline-block; margin-top:30px; margin-bottom: 30px">
+                <p>By <?php echo $postData['user_fname'] . " " . $postData['user_lname']; ?></p>
+            </div>
+        </div>
+    </div>
 
 
-    //require_once("inc/footer.php");
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <img class="img-fluid fit-image" src="<?php echo $postData['post_featured_img']; ?>" alt="<?php echo $postData['post_title']; ?>">
+
+                <div class="container" style="margin-top:80px">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <!--img src="https://www.verywellhealth.com/thmb/TvztNApqnUbUzxZR4S_-Lvz6ngI=/220x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/news-illo-health-92feca2e52e44c5488b8349e22518212.png" alt="" class="img-responsive"-->
+                            <?php
+                            if ($postData['post_series'] !== "" && $postData['post_series'] !== NULL && $postData['post_series'] !== 0) {
+                                $series = $postData['post_series'];
+                                $query = "SELECT * FROM hc_posts WHERE post_series = $series ORDER BY post_series_heading";
+                                //die($query);
+                                $fetchHeadings = $conn->query($query);
+                                while ($seriesHeadings = $fetchHeadings->fetch_assoc()) {
+                                    echo "<li style='border-bottom:1px dotted black'>" . $seriesHeadings['post_series_heading'] . "</li>";
+                                }
+                            }
+                            ?>
+                        </div>
+
+                        <div class="col-sm">
+                            <?php echo $postData['post_content']; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md" style="padding-left:0px; padding-right:0px; width:300px">
+                    Trying to navigate social interaction during a summer
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+
+
+            <?php
+            if (!empty($postData['post_child_cat']) || $postData['post_child_cat'] !== 0 || $postData['post_child_cat'] !== NULL) {
+
+                $tableName = "hc_posts";
+                $columnName = 'post_child_cat';
+                $start = 0;
+                $end = 100;
+                $value = $postData['post_child_cat'];
+                $posst = $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end);
+                //var_dump($posst);die();
+                $dumpSize = sizeof($posst);
+                //echo $dumpSize;
+                $i = 0;
+                while ($i < $dumpSize) {
+                    $postLink = $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_slug'];
+                    echo '
+            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
+            <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
+            <a href="' . $postLink . '">    
+            <div>
+                    <img src="' . $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_featured_img'] . '" class="homefeaturedimgs">
+                </div>
+                <div class="posttitle" style="padding:20px"><br>
+                    <p>Test Category</p>
+                    <h5 class="grow titletext mt-1">' . $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_title'] . '</h5>
+
+                </div>
+                </a>
+            </div>
+
+        </div>';
+                    // $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_title']."<br>";
+                    $i++;
+                }
+            } else {
+                $postCat = $postData['post_category'];
+                echo "parent";
+            }
+            ?>
+
+
+
+            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
+                <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
+                    <div>
+                        <img src="https://www.verywellhealth.com/thmb/mLqwUFQZW3FU1ai3PrPjb6bD7Mk=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1224954339-4976e5286dab4e139527778068377fc1.jpg" class="homefeaturedimgs">
+                    </div>
+                    <div class="posttitle" style="padding:20px"><br>
+                        <p>Test Category</p>
+                        <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
+                <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
+                    <div>
+                        <img src="https://www.verywellhealth.com/thmb/mLqwUFQZW3FU1ai3PrPjb6bD7Mk=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1224954339-4976e5286dab4e139527778068377fc1.jpg" class="homefeaturedimgs">
+                    </div>
+                    <div class="posttitle" style="padding:20px"><br>
+                        <p>Test Category</p>
+                        <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
+                <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
+                    <div>
+                        <img src="https://www.verywellhealth.com/thmb/mLqwUFQZW3FU1ai3PrPjb6bD7Mk=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1224954339-4976e5286dab4e139527778068377fc1.jpg" class="homefeaturedimgs">
+                    </div>
+                    <div class="posttitle" style="padding:20px"><br>
+                        <p>Test Category</p>
+                        <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
+                <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
+                    <div>
+                        <img src="https://www.verywellhealth.com/thmb/mLqwUFQZW3FU1ai3PrPjb6bD7Mk=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1224954339-4976e5286dab4e139527778068377fc1.jpg" class="homefeaturedimgs">
+                    </div>
+                    <div class="posttitle" style="padding:20px"><br>
+                        <p>Test Category</p>
+                        <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+<?php
+
+
+
+    require_once("inc/footer.php");
     die();
 } elseif (!isset($_REQUEST['post_slug'])) {
     $title = "HealthCabal - Credible Health Information Anytime, Anywhere";
@@ -60,15 +231,16 @@ if ($conn->affected_rows > 0) {
         <div class="row">
 
             <div class="col-md-6 shadow-right" id="homefeatured">
-                <div id="homefeaturedimg">
-                    <img class="grow img-fluid fit-image" src="<?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_featured_img"); ?>"></img>
-                </div>
-                <div id="homefeaturedtitle">
-                    <!--h6 class="headsub">CANCERS</h6--->
-                    <a href="<?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_slug"); ?>">
+                <a href="<?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_slug"); ?>">
+                    <div id="homefeaturedimg">
+                        <img class="grow img-fluid fit-image" src="<?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_featured_img"); ?>"></img>
+                    </div>
+                    <div id="homefeaturedtitle">
+                        <!--h6 class="headsub">CANCERS</h6--->
                         <h4 class="grow titletext"><?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_title"); ?></h4>
-                    </a>
-                </div>
+
+                    </div>
+                </a>
 
             </div>
             <div class="row col-md-3 col-sm-12">
