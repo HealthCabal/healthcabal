@@ -9,9 +9,9 @@ if (in_array($_SERVER['REMOTE_ADDR'], $localhost)) {
     $conn = new mysqli($host, $username, $password, $database);
 } else {
     $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "healthcabal";
+    $username = "healmsuw_hcdb2020";
+    $password = "northshoreofmatsushima";
+    $database = "healmsuw_hcdb2020";
     $conn = new mysqli($host, $username, $password, $database);
 
     /***
