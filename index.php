@@ -44,7 +44,7 @@ if ($conn->affected_rows > 0) {
             <div class="col-lg-9">
                 <img class="img-fluid fit-image" src="<?php echo $postData['post_featured_img']; ?>" alt="<?php echo $postData['post_title']; ?>">
 
-                <div class="container" style="margin-top:80px">
+                
                     <div class="row">
                         <div class="col-sm-3">
                             <!--img src="https://www.verywellhealth.com/thmb/TvztNApqnUbUzxZR4S_-Lvz6ngI=/220x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/news-illo-health-92feca2e52e44c5488b8349e22518212.png" alt="" class="img-responsive"-->
@@ -64,7 +64,6 @@ if ($conn->affected_rows > 0) {
                         <div class="col-sm">
                             <?php echo $postData['post_content']; ?>
                         </div>
-                    </div>
                 </div>
             </div>
 
@@ -275,17 +274,25 @@ if ($conn->affected_rows > 0) {
                 </div>
             </div-->
             </div>
-            <div class="col-md-3 shadow-right" style="height:490px; margin-top:10px; border-radius:10px 10px 10px 0px; background-color:white">
-                <ul class="list-group-flush" style="margin-top:10px; border-top-right-radius:10px">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                </ul>
+            <div class="col-md-3 shadow-right" style="height:490px; margin-top:10px; border-radius:10px 10px 10px 0px; background-color: #BAF8FF">
+            <h4 style="padding-top:10px">Check out the hottest topics</h4>  
+            <p style="color:black">Selected by out editors, these topics represent what lots of people are searching for at the moment.</p>
+            
+            <button class="btn btn-sm home-buttons" style="background-color:#053641">
+                   Stroke
+               </button>
+
+               <button class="home-buttons btn btn-sm " style="background-color:#053641;">
+                   High Blood Pressure
+               </button>
+
+               <button class="home-buttons btn btn-sm " style="background-color:#053641">
+                   Diabetes
+               </button>
+
+               <button class="home-buttons btn btn-sm " style="background-color:#053641">
+                   Heart Attack
+               </button>
             </div>
 
 

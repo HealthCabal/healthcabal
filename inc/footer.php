@@ -10,65 +10,65 @@
                             </a>
                         </div>
                         <p>Address <a href="https://www.google.com/maps/place/London,+UK/@51.528308,-0.3817812,10z/data=!3m1!4b1!4m5!3m4!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5073509!4d-0.1277583"
-                                target="_blank">5272 Lyngate Ct Burke, VA 2015-1688</a></p>
-                        <p>Contact Info <a href="tel:+1%20998%20150%30%2020"> +1 998 150 30 20</a> <a href="mailto:info@agencify.com">info@agencify.com</a></p>
+                                target="_blank">12B, Zango Road, Eliozu, PHC.</a></p>
+                        <p>Contact Info <a href="tel:+1%20998%20150%30%2020"> +234 816 8988</a> <a href="mailto:info@agencify.com">info@healthcabal.com</a></p>
                     </div><!-- .footer-widget END -->
                 </div>
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
-                        <h4 class="widget-title">Useful Links</h4>
+                        <h4 class="widget-title">Hot Topics</h4>
                         <ul class="xs-list">
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="service.html">Service</a></li>
-                            <li><a href="blog-grid-sidebar.html">News & Blog</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="portfolio.html">Heart Attack</a></li>
+                            <li><a href="portfolio-masonry.html">Diabetes</a></li>
+                            <li><a href="portfolio.html">Stroke</a></li>
+                            <li><a href="portfolio.html">High Blood Pressure</a></li>
+                        </ul><!-- .xs-list END -->
+                    </div><!-- .footer-widget END -->
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget">
+                        <h4 class="widget-title">About</h4>
+                        <ul class="xs-list">
+                            <li><a href="about.html">Healthcabal</a></li>
+                            <li><a href="service.html">Our Company</a></li>
+                            <li><a href="blog-grid-sidebar.html">Contact Us</a></li>
+                            <!--li><a href="contact.html">Contact Us</a></li>
                             <li><a href="cases.html">Case</a></li>
                             <li><a href="shop.html">Shop</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li-->
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
-                        <h4 class="widget-title">About Us</h4>
+                        <h4 class="widget-title">Our Other Sites</h4>
                         <ul class="xs-list">
-                            <li><a href="about.html">Our Company</a></li>
-                            <li><a href="about.html">Advisory Board</a></li>
+                            <li><a href="about.html">Medcabal</a></li>
+                            <li><a href="about.html">Fitcabal</a></li>
+                            <li><a href="about.html">Mencabal</a></li>
+                            <li><a href="about.html">Womencabal</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
+            
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
-                        <h4 class="widget-title">Our Services</h4>
+                        <h4 class="widget-title">Editorial</h4>
                         <ul class="xs-list">
-                            <li><a href="portfolio.html">Web Design</a></li>
-                            <li><a href="portfolio-masonry.html">Web Application</a></li>
-                            <li><a href="portfolio.html">Android Apps</a></li>
-                            <li><a href="portfolio-masonry.html">iOS Apps</a></li>
-                            <li><a href="portfolio.html">Mobile Application</a></li>
-                            <li><a href="portfolio-masonry.html">Web Development</a></li>
-                            <li><a href="portfolio.html">Corporate Service</a></li>
-                        </ul><!-- .xs-list END -->
-                    </div><!-- .footer-widget END -->
-                </div>
-                <div class="col-md-6 col-lg-2">
-                    <div class="footer-widget">
-                        <h4 class="widget-title">Useful Links</h4>
-                        <ul class="xs-list">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Our Editorial Process</a></li>
+                            <li><a href="#">Our Review Board</a></li>
                             <li><a href="#">Legal info</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
-                        <h4 class="widget-title">Other Links</h4>
+                        <h4 class="widget-title">Legal</h4>
                         <ul class="xs-list">
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">Sitemap</a></li>
-                            <li><a href="#">Cookies</a></li>
-                            <li><a href="#">Adchoies</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policiy</a></li>
+                            <li><a href="#">Copyright</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="copyright-section">
-                        <p>Copyright 2018, <a href="https://themeforest.net/user/xpeedstudio/portfolio">Agencify</a>
+                        <p>Copyright <?php echo date('Y') ?>, <a href="https://healthcabal.com">Healthcabal</a>
                             All Rights Reserved.</p>
                     </div><!-- .copyright-section END -->
                 </div>

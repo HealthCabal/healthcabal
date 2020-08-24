@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -164,7 +165,7 @@
 
         .grow:hover {
             transform: scale(1.03);
-            color:red;
+            color: red;
         }
 
 
@@ -231,6 +232,13 @@
             margin-right: 10;
         }
 
+        .home-buttons {
+            background-color: #053641;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 0px;
+            margin-top: 10px;
+        }
+
         @media (max-width: 991.98px) {
             .top-right-col {
                 height: 330px;
@@ -261,74 +269,82 @@
                 height: auto;
                 margin-bottom: 200px;
             }
-            #space404{
+
+            #space404 {
                 padding-bottom: 50px
             }
         }
     </style>
-    <div>
-        <!-- header section -->
-        <header class="xs-header header-style9 sticky-top" style="background-color: white;">
+    <header class="xs-header header-style9 sticky-top" style="background-color: white;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="<?php echo $homeurl; ?>"><img src="assets/images/logo.png" width="150"></a>
+                <a class="navbar-brand" href="<?php echo $homeurl; ?>"><img src="assets/images/logo.png" width="150"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
-                        <span class="nav-trigger style-2">MENU</span>
-                    </button>
-                    <div class="nav-menus-wrapper align-to-right" style="transition-property:none;">
-                        <div class="collapse navbar-collapse" id="main_nav" style=" float:right">
-                            <ul class="nav nav-nav nav-right">
-                                <li class="nav-item dropdown has-megamenu">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Mega menu </a>
-                                    <div class="dropdown-menu megamenu">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <ul class="xs-icon-menu">
-                                                    <li class="single-menu-item"><a href="testimonial.html"><i class="icon icon-users"></i>Testimonials</a></li>
-                                                    <li class="single-menu-item"><a href="team.html"><i class="icon icon-user"></i>Teams</a></li>
-                                                    <li class="single-menu-item"><a href="menus.html"><i class="icon icon-menu"></i>Menus</a></li>
-                                                    <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
-                                                    <li class="single-menu-item"><a href="section-title.html"><i class="icon icon-pencil"></i>Section Title</a></li>
-                                                </ul><!-- .xs-icon-menu END -->
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <ul class="xs-icon-menu">
-                                                    <li class="single-menu-item"><a href="contact-form.html"><i class="icon icon-email"></i>Contact Input</a></li>
-                                                    <li class="single-menu-item"><a href="call-to-actions.html"><i class="icon icon-email2"></i>Call To Actions</a></li>
-                                                    <li class="single-menu-item"><a href="subscribe-forms.html"><i class="icon icon-envelope3"></i>Subscribe Forms</a></li>
-                                                    <li class="single-menu-item"><a href="blog-block.html"><i class="icon icon-file-2"></i>Blog BLock</a></li>
-                                                    <li class="single-menu-item"><a href="service-block.html"><i class="icon icon-settings"></i>Service BLock</a></li>
-                                                </ul><!-- .xs-icon-menu END -->
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <ul class="xs-icon-menu">
-                                                    <li class="single-menu-item"><a href="clients.html"><i class="icon icon-user-1"></i>Clients</a></li>
-                                                    <li class="single-menu-item"><a href="counter-up.html"><i class="icon icon-hourglass"></i>Fun Fact</a></li>
-                                                    <li class="single-menu-item"><a href="pie-chart.html"><i class="icon icon-bullhorn"></i>Pie Chart</a></li>
-                                                    <li class="single-menu-item"><a href="skill-bar.html"><i class="icon icon-growth"></i>Skill bar</a></li>
-                                                    <li class="single-menu-item"><a href="footer.html"><i class="icon icon-growth"></i>Footer</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <ul class="xs-icon-menu">
-                                                    <li class="single-menu-item"><a href="portfolios.html"><i class="icon icon-image"></i>Portfolio</a></li>
-                                                    <li class="single-menu-item"><a href="timeline.html"><i class="icon icon-agenda"></i>Time Line</a></li>
-                                                    <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
-                                                    <li class="single-menu-item"><a href="subscribe-forms.html"><i class="icon icon-envelope3"></i>Subscribe Forms</a></li>
-                                                    <li class="single-menu-item"><a href="pie-chart.html"><i class="icon icon-bullhorn"></i>Pie Chart</a></li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .row END -->
+                <div class="collapse navbar-collapse" id="navbarsExample07">
+                    <ul class="navbar-nav mr-auto">
 
-                                    </div> <!-- dropdown-mega-menu.// -->
-                                </li>
+                    </ul>
+                    <ul>
+                        </li>
+                        <li class="nav-item dropdown has-megamenu">
+                            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENU</a>
+                            <div class="dropdown-menu megamenu">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <ul class="xs-icon-menu">
+                                            <li class="single-menu-item"><a href="testimonial.html"><i class="icon icon-users"></i>Testimonials</a></li>
+                                            <li class="single-menu-item"><a href="team.html"><i class="icon icon-user"></i>Teams</a></li>
+                                            <li class="single-menu-item"><a href="menus.html"><i class="icon icon-menu"></i>Menus</a></li>
+                                            <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
+                                            <li class="single-menu-item"><a href="section-title.html"><i class="icon icon-pencil"></i>Section Title</a></li>
+                                        </ul><!-- .xs-icon-menu END -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="xs-icon-menu">
+                                            <li class="single-menu-item"><a href="contact-form.html"><i class="icon icon-email"></i>Contact Input</a></li>
+                                            <li class="single-menu-item"><a href="call-to-actions.html"><i class="icon icon-email2"></i>Call To Actions</a></li>
+                                            <li class="single-menu-item"><a href="subscribe-forms.html"><i class="icon icon-envelope3"></i>Subscribe Forms</a></li>
+                                            <li class="single-menu-item"><a href="blog-block.html"><i class="icon icon-file-2"></i>Blog BLock</a></li>
+                                            <li class="single-menu-item"><a href="service-block.html"><i class="icon icon-settings"></i>Service BLock</a></li>
+                                        </ul><!-- .xs-icon-menu END -->
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="xs-icon-menu">
+                                            <li class="single-menu-item"><a href="clients.html"><i class="icon icon-user-1"></i>Clients</a></li>
+                                            <li class="single-menu-item"><a href="counter-up.html"><i class="icon icon-hourglass"></i>Fun Fact</a></li>
+                                            <li class="single-menu-item"><a href="pie-chart.html"><i class="icon icon-bullhorn"></i>Pie Chart</a></li>
+                                            <li class="single-menu-item"><a href="skill-bar.html"><i class="icon icon-growth"></i>Skill bar</a></li>
+                                            <li class="single-menu-item"><a href="footer.html"><i class="icon icon-growth"></i>Footer</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="xs-icon-menu">
+                                            <li class="single-menu-item"><a href="portfolios.html"><i class="icon icon-image"></i>Portfolio</a></li>
+                                            <li class="single-menu-item"><a href="timeline.html"><i class="icon icon-agenda"></i>Time Line</a></li>
+                                            <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
+                                            <li class="single-menu-item"><a href="subscribe-forms.html"><i class="icon icon-envelope3"></i>Subscribe Forms</a></li>
+                                            <li class="single-menu-item"><a href="pie-chart.html"><i class="icon icon-bullhorn"></i>Pie Chart</a></li>
+                                        </ul>
+                                    </div>
+                                </div><!-- .row END -->
 
-                            </ul>
-                        </div> <!-- navbar-collapse.// -->
-                    </div>
-                </nav>
+                            </div> <!-- dropdown-mega-menu.// -->
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </header>
+        </nav>
 
-        <!--https://bootstrap-menu.com/detail-megamenu.html-->
+
+
+
+
+        <div>
+    </header>
+    <!-- header section -->
+    
+
+    <!--https://bootstrap-menu.com/detail-megamenu.html-->
