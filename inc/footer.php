@@ -88,7 +88,7 @@
                     <div class="copyright-content">
                         <ul class="social-list version-2">
                             <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://twitter.com/healthcabal" class="twitter"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
                         </ul>

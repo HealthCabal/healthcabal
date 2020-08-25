@@ -274,79 +274,65 @@
                 font-size:50px
             }
     </style>
-    <div>
-        <!-- header section -->
-        <header class="xs-header header-style9 sticky-top" style="background-color: white;">
+    <header class="xs-header header-style9 sticky-top" style="background-color: white;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo $homeurl; ?>"><img src="assets/images/logo.png" width="150"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarsExample07">
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
-                    <ul>
-                        </li>
-                        <li class="nav-item dropdown has-megamenu">
-                            <a class="nav-link" href="#!" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong><span class="icon icon-menu font-5"></span></strong></a>
-                            <div class="dropdown-menu megamenu">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <ul class="xs-icon-menu">
-                                            <li class="single-menu-item"><a href="testimonial.html"><i class="icon icon-users"></i>Testimonials</a></li>
-                                            <li class="single-menu-item"><a href="team.html"><i class="icon icon-user"></i>Teams</a></li>
-                                            <li class="single-menu-item"><a href="menus.html"><i class="icon icon-menu"></i>Menus</a></li>
-                                            <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
-                                            <li class="single-menu-item"><a href="section-title.html"><i class="icon icon-pencil"></i>Section Title</a></li>
-                                        </ul><!-- .xs-icon-menu END -->
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <ul class="xs-icon-menu">
-                                            <li class="single-menu-item"><a href="contact-form.html"><i class="icon icon-email"></i>Contact Input</a></li>
-                                            <li class="single-menu-item"><a href="call-to-actions.html"><i class="icon icon-email2"></i>Call To Actions</a></li>
-                                            <li class="single-menu-item"><a href="subscribe-forms.html"><i class="icon icon-envelope3"></i>Subscribe Forms</a></li>
-                                            <li class="single-menu-item"><a href="blog-block.html"><i class="icon icon-file-2"></i>Blog BLock</a></li>
-                                            <li class="single-menu-item"><a href="service-block.html"><i class="icon icon-settings"></i>Service BLock</a></li>
-                                        </ul><!-- .xs-icon-menu END -->
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <ul class="xs-icon-menu">
-                                            <li class="single-menu-item"><a href="clients.html"><i class="icon icon-user-1"></i>Clients</a></li>
-                                            <li class="single-menu-item"><a href="counter-up.html"><i class="icon icon-hourglass"></i>Fun Fact</a></li>
-                                            <li class="single-menu-item"><a href="pie-chart.html"><i class="icon icon-bullhorn"></i>Pie Chart</a></li>
-                                            <li class="single-menu-item"><a href="skill-bar.html"><i class="icon icon-growth"></i>Skill bar</a></li>
-                                            <li class="single-menu-item"><a href="footer.html"><i class="icon icon-growth"></i>Footer</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <ul class="xs-icon-menu">
-                                            <li class="single-menu-item"><a href="portfolios.html"><i class="icon icon-image"></i>Portfolio</a></li>
-                                            <li class="single-menu-item"><a href="timeline.html"><i class="icon icon-agenda"></i>Time Line</a></li>
-                                            <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
-                                            <li class="single-menu-item"><a href="subscribe-forms.html"><i class="icon icon-envelope3"></i>Subscribe Forms</a></li>
-                                            <li class="single-menu-item"><a href="pie-chart.html"><i class="icon icon-bullhorn"></i>Pie Chart</a></li>
-                                        </ul>
-                                    </div>
-                                </div><!-- .row END -->
+                <ul>
+                    <li class="nav-item dropdown has-megamenu">
+                        <a class="nav-link" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon icon-menu font-5"></span></a>
+                        <div class="dropdown-menu megamenu">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <ul class="xs-icon-menu">
+                                        <li class="single-menu-item"><a href="testimonial.html"><i class="icon icon-users"></i>Testimonials</a></li>
+                                        <li class="single-menu-item"><a href="team.html"><i class="icon icon-user"></i>Teams</a></li>
+                                        <li class="single-menu-item"><a href="menus.html"><i class="icon icon-menu"></i>Menus</a></li>
+                                        <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
+                                        <li class="single-menu-item"><a href="section-title.html"><i class="icon icon-pencil"></i>Section Title</a></li>
+                                    </ul><!-- .xs-icon-menu END -->
+                                </div>
+                                <div class="col-lg-3">
+                                    <ul class="xs-icon-menu">
+                                        <li class="single-menu-item"><a href="contact-form.html"><i class="icon icon-email"></i>Contact Input</a></li>
+                                        <li class="single-menu-item"><a href="call-to-actions.html"><i class="icon icon-email2"></i>Call To Actions</a></li>
+                                        <li class="single-menu-item"><a href="subscribe-forms.html"><i class="icon icon-envelope3"></i>Subscribe Forms</a></li>
+                                        <li class="single-menu-item"><a href="blog-block.html"><i class="icon icon-file-2"></i>Blog BLock</a></li>
+                                        <li class="single-menu-item"><a href="service-block.html"><i class="icon icon-settings"></i>Service BLock</a></li>
+                                    </ul><!-- .xs-icon-menu END -->
+                                </div>
+                                <div class="col-lg-3">
+                                    <ul class="xs-icon-menu">
+                                        <li class="single-menu-item"><a href="clients.html"><i class="icon icon-user-1"></i>Clients</a></li>
+                                        <li class="single-menu-item"><a href="counter-up.html"><i class="icon icon-hourglass"></i>Fun Fact</a></li>
+                                        <li class="single-menu-item"><a href="pie-chart.html"><i class="icon icon-bullhorn"></i>Pie Chart</a></li>
+                                        <li class="single-menu-item"><a href="skill-bar.html"><i class="icon icon-growth"></i>Skill bar</a></li>
+                                        <li class="single-menu-item"><a href="footer.html"><i class="icon icon-growth"></i>Footer</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3">
+                                    <ul class="xs-icon-menu">
+                                        <li class="single-menu-item"><a href="portfolios.html"><i class="icon icon-image"></i>Portfolio</a></li>
+                                        <li class="single-menu-item"><a href="timeline.html"><i class="icon icon-agenda"></i>Time Line</a></li>
+                                        <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
+                                        <li class="single-menu-item"><a href="subscribe-forms.html"><i class="icon icon-envelope3"></i>Subscribe Forms</a></li>
+                                        <li class="single-menu-item"><a href="pie-chart.html"><i class="icon icon-bullhorn"></i>Pie Chart</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- .row END -->
 
-                            </div> <!-- dropdown-mega-menu.// -->
-                        </li>
-                    </ul>
-                </div>
+                        </div> <!-- dropdown-mega-menu.// -->
+                    </li>
+                </ul>
+                <a class="navbar-brand col-md-3 offset-md-2" href="<?php echo $homeurl; ?>"><img src="assets/images/logo.png" width="150"></a>
+
+                <form class="form-inline my-2 my-md-0">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </form>
             </div>
         </nav>
 
-
-
-
-
-        <div>
     </header>
     <!-- header section -->
-    
-
-    <!--https://bootstrap-menu.com/detail-megamenu.html-->
         <!--https://bootstrap-menu.com/detail-megamenu.html-->
