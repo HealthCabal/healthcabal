@@ -15,11 +15,11 @@ class Crud
 
 		 * @param mixed $data - an array containing what is to be stored
 
- 		 * @param mixed $values - a set of parameter markers passed to $conn->prepare() separated by commas that correspond to the number of items in the $data array
+		 * @param mixed $values - a set of parameter markers passed to $conn->prepare() separated by commas that correspond to the number of items in the $data array
 
-         * @param mixed $columns
+		 * @param mixed $columns
 
-         * @return string|on success - "success"; on failure - failure
+		 * @return string|on success - "success"; on failure - failure
 		 ***/
 		$data = implode('","', $data);
 		$data = '"' . $data . '"';
@@ -62,22 +62,28 @@ class Crud
 	}
 
 
-	function fetchDataWithLimit($conn, $tableName, $columnName, $value, $start, $end) {
+	function fetchDataWithLimit($conn, $tableName, $columnName, $value, $start, $end)
+	{
 		$query = "SELECT * FROM $tableName WHERE $columnName = $value LIMIT $start, $end";
-	//die($query);
+		//die($query);
 		$result = $conn->query($query);
-		if($conn->affected_rows > 0) {
+		if ($conn->affected_rows > 0) {
 			$dataDump = array();
-			
-			while($dataset = $result->fetch_assoc()){
-				$dataDump[] = $dataset;	
-			}
-			
-			return $dataDump;
-		
-		} else {
-			return "empty set";
-		}
 
+			while ($dataset = $result->fetch_assoc()) {
+				$dataDump[] = $dataset;
+			}
+
+			return $dataDump;
+		} else {
+			$query = "SELECT * FROM $tableName ORDER BY ID DESC LIMIT $start, $end";
+			$result = $conn->query($query);
+			$dataDump = array();
+
+			while ($dataset = $result->fetch_assoc()) {
+				$dataDump[] = $dataset;
+			}
+			return $dataDump;
+		}
 	}
 }

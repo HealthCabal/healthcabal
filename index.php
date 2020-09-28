@@ -1,10 +1,12 @@
 <?php
 
 require_once("classes/config.php");
+require_once('classes/posts.php');
 
 if (isset($_REQUEST['post_slug'])) {
     $postSlug = $_GET['post_slug'];
-    $fetchPost = "SELECT * FROM  hc_posts, hc_users WHERE post_slug = '$postSlug' AND hc_posts.post_author = hc_users.ID";
+    $fetchPost = "SELECT * FROM  hc_posts, hc_users WHERE post_slug = '$postSlug'";
+    //die($fetchPost);
     $result = $conn->query($fetchPost);
 }
 if ($conn->affected_rows > 0) {
@@ -44,33 +46,33 @@ if ($conn->affected_rows > 0) {
             <div class="col-lg-9">
                 <img class="img-fluid fit-image" src="<?php echo $postData['post_featured_img']; ?>" alt="<?php echo $postData['post_title']; ?>">
 
-                
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <!--img src="https://www.verywellhealth.com/thmb/TvztNApqnUbUzxZR4S_-Lvz6ngI=/220x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/news-illo-health-92feca2e52e44c5488b8349e22518212.png" alt="" class="img-responsive"-->
-                            <?php
-                            if ($postData['post_series'] !== "" && $postData['post_series'] !== NULL && $postData['post_series'] !== 0) {
-                                $series = $postData['post_series'];
-                                $query = "SELECT * FROM hc_posts WHERE post_series = $series ORDER BY post_series_heading";
-                                //die($query);
-                                $fetchHeadings = $conn->query($query);
-                                while ($seriesHeadings = $fetchHeadings->fetch_assoc()) {
-                                    echo "<li style='border-bottom:1px dotted black'>" . $seriesHeadings['post_series_heading'] . "</li>";
-                                }
-                            }
-                            ?>
-                        </div>
 
-                        <div class="col-sm">
-                            <?php echo $postData['post_content']; ?>
-                        </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <!--img src="https://www.verywellhealth.com/thmb/TvztNApqnUbUzxZR4S_-Lvz6ngI=/220x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/news-illo-health-92feca2e52e44c5488b8349e22518212.png" alt="" class="img-responsive"-->
+                        <?php
+                        if ($postData['post_series'] !== "" && $postData['post_series'] !== NULL && $postData['post_series'] !== 0) {
+                            $series = $postData['post_series'];
+                            $query = "SELECT post_series_heading, post_slug FROM hc_posts WHERE post_series = $series ORDER BY series_priority ASC";
+                            //die($query);
+                            $fetchHeadings = $conn->query($query);
+                            while ($seriesHeadings = $fetchHeadings->fetch_assoc()) {
+                                echo "<li style='border-bottom:1px dotted black'><a href='" . $homeurl . $seriesHeadings['post_slug'] . "'>" . $seriesHeadings['post_series_heading'] . "</a></li>";
+                            }
+                        }
+                        ?>
+                    </div>
+
+                    <div class="col-sm">
+                        <?php echo $postData['post_content']; ?>
+                    </div>
                 </div>
             </div>
 
 
             <div class="col-md" style="padding-left:0px; padding-right:0px; width:300px">
-                    Trying to navigate social interaction during a summer
-                </div>
+                Trying to navigate social interaction during a summer
+            </div>
         </div>
     </div>
 
@@ -88,7 +90,7 @@ if ($conn->affected_rows > 0) {
                 $tableName = "hc_posts";
                 $columnName = 'post_child_cat';
                 $start = 0;
-                $end = 100;
+                $end = 8;
                 $value = $postData['post_child_cat'];
                 $posst = $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end);
                 //var_dump($posst);die();
@@ -275,24 +277,24 @@ if ($conn->affected_rows > 0) {
             </div-->
             </div>
             <div class="col-md-3 shadow-right" style="height:490px; margin-top:10px; border-radius:10px 10px 10px 0px; background-color: #BAF8FF">
-            <h4 style="padding-top:10px">Check out the hottest topics</h4>  
-            <p style="color:black">Selected by out editors, these topics represent what lots of people are searching for at the moment.</p>
-            
-            <button class="btn btn-sm home-buttons" style="background-color:#053641">
-                   Stroke
-               </button>
+                <h4 style="padding-top:10px">Check out the hottest topics</h4>
+                <p style="color:black">Selected by out editors, these topics represent what lots of people are searching for at the moment.</p>
 
-               <button class="home-buttons btn btn-sm " style="background-color:#053641;">
-                   High Blood Pressure
-               </button>
+                <button class="btn btn-sm home-buttons" style="background-color:#053641">
+                    Stroke
+                </button>
 
-               <button class="home-buttons btn btn-sm " style="background-color:#053641">
-                   Diabetes
-               </button>
+                <button class="home-buttons btn btn-sm " style="background-color:#053641;">
+                    High Blood Pressure
+                </button>
 
-               <button class="home-buttons btn btn-sm " style="background-color:#053641">
-                   Heart Attack
-               </button>
+                <button class="home-buttons btn btn-sm " style="background-color:#053641">
+                    Diabetes
+                </button>
+
+                <button class="home-buttons btn btn-sm " style="background-color:#053641">
+                    Heart Attack
+                </button>
             </div>
 
 
@@ -301,11 +303,20 @@ if ($conn->affected_rows > 0) {
 
 
     <div class="container">
+
+
         <div class="row">
-            <div class="row col-md col-sm-12">
+
+
+            <?php
+            $stat = 6;
+            $end = 9;
+            $postHandler->fetchFeaturedPosts($conn, $start, $end, $homeurl)
+            ?>
+            <!--div class="row col-md col-sm-12">
                 <div class="col-md top-right-col  shadow-right second-row-home">
                     <div style="height:auto" class="posttitle"><br>
-                        <p>Test Category</p>
+                        <p>Test Categoryjhjh</p>
                         <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
                     </div>
                 </div>
@@ -341,7 +352,8 @@ if ($conn->affected_rows > 0) {
                     </div>
                 </div>
 
-            </div>
+            </div-->
+
         </div>
     </div>
     <div class="container">
@@ -374,6 +386,34 @@ if ($conn->affected_rows > 0) {
             </div>
             <div class="col-md featured-conditions">
                 Hello world
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <br>
+        <div class="row">
+            <br>
+            <h5 class="titletext">THE HEALTHCABAL PROMISE</h5>
+        </div>
+    </div>
+    <div class="container" id="ourpromise">
+        <div class="row">
+            <div class="col-4" style="margin-top:60px">
+                <h4 style="color:white">
+                    Our processes are optimized to ensure
+                    information of the highest quality.
+                </h4>
+                <button class="btn btn-primary">Read about our process</button>
+            </div>
+            <div class="col" style="margin-top:80px">
+                <h5 class="text-center" style="color:white">Written and verified by health experts.</h5>
+            </div>
+            <div class="col" style="margin-top:80px">
+                <h5 class="text-center" style="color:white">Reviewed by certified professionals.</h5>
+            </div>
+            <div class="col" style="margin-top:80px">
+                <h5 class="text-center" style="color:white">Updated to reflect latest medical advances.</h5>
             </div>
         </div>
     </div>

@@ -87,11 +87,24 @@
             background-color: #F7F9F9;
         }
 
+        #ourpromise {
+            height: auto;
+            background-color: #00323D;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-top: 30px;
+            -webkit-box-shadow: 8px 8px 1px -3px #EFF1F1;
+            box-shadow: 8px 8px 1px -3px #EFF1F1;
+            padding-bottom: 30px;
+        }
+
         @media all and (min-width: 992px) {
             .navbar {
                 padding-top: 0;
                 padding-bottom: 0;
             }
+
 
             .navbar .has-megamenu {
                 position: static !important;
@@ -217,7 +230,7 @@
 
         .second-row-home {
             background-color: white;
-            height: 200px;
+            height: 350px;
         }
 
         .center {
