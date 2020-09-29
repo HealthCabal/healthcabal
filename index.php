@@ -404,7 +404,7 @@ if ($conn->affected_rows > 0) {
                     Our processes are optimized to ensure
                     information of the highest quality.
                 </h4>
-                <button class="btn btn-primary">More on our process</button>
+                <button class="btn btn-primary text-center">More on our process</button>
             </div>
             <div class="col-sm" style="margin-top:80px">
                 <h5 class="text-center" style="color:white">Written and verified by health experts.</h5>
