@@ -399,20 +399,20 @@ if ($conn->affected_rows > 0) {
     </div>
     <div class="container" id="ourpromise">
         <div class="row">
-            <div class="col-4" style="margin-top:60px">
-                <h4 style="color:white">
+            <div class="col-sm" style="margin-top:40px">
+                <h4 style="color:white" class="text-center">
                     Our processes are optimized to ensure
                     information of the highest quality.
                 </h4>
-                <button class="btn btn-primary">Read about our process</button>
+                <button class="btn btn-primary">More on our process</button>
             </div>
-            <div class="col" style="margin-top:80px">
+            <div class="col-sm" style="margin-top:80px">
                 <h5 class="text-center" style="color:white">Written and verified by health experts.</h5>
             </div>
-            <div class="col" style="margin-top:80px">
+            <div class="col-sm" style="margin-top:80px">
                 <h5 class="text-center" style="color:white">Reviewed by certified professionals.</h5>
             </div>
-            <div class="col" style="margin-top:80px">
+            <div class="col-sm" style="margin-top:80px">
                 <h5 class="text-center" style="color:white">Updated to reflect latest medical advances.</h5>
             </div>
         </div>
