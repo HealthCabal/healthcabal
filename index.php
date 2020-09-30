@@ -417,6 +417,57 @@ if ($conn->affected_rows > 0) {
             </div>
         </div>
     </div>
+
+    <div class="container" style="margin-top:60px; background-color:white; padding-top:10px">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+
+                    <div class="col text-center">
+                        <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
+                        <div class="w-100"></div>
+                        <h4>Lorem Ipsum</h4>
+                        <div class="w-100"></div>
+                        MD, Family Medicine
+                    </div>
+                    <div class="col text-center">
+                        <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
+                        <div class="w-100"></div>
+                        <h4>Lorem Ipsum</h4>
+                        <div class="w-100"></div>
+                        MD, Family Medicine
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col text-center">
+                        <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
+                        <div class="w-100"></div>
+                        <h4>Lorem Ipsum</h4>
+                        <div class="w-100"></div>
+                        MD, Family Medicine
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col text-center">
+                        <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
+                        <div class="w-100"></div>
+                        <h4>Lorem Ipsum</h4>
+                        <div class="w-100"></div>
+                        MD, Family Medicine
+                    </div>
+
+                </div>
+            </div>
+            <div class="col" style="padding-top:100px">
+            <h4>
+                Our medical review team made of medical doctors always ensure
+                that our content is medically accurate.
+                Get to know our team.
+                </h4>
+                <button class="btn btn-primary">Meet our team</button>
+            </div>
+        </div>
+    </div>
 <?php
 
     require_once("inc/footer.php");
