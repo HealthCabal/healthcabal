@@ -252,6 +252,10 @@
             margin-top: 10px;
         }
 
+        #teamblurb{
+            padding-top: 100px;
+        }
+
         @media (max-width: 991.98px) {
             .top-right-col {
                 height: 330px;
@@ -289,6 +293,10 @@
 
             #ourteam {
                 margin-top: 80px;
+            }
+            
+            #teamblurb{
+                padding-top:50px;
             }
         }
 

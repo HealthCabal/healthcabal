@@ -420,7 +420,7 @@ if ($conn->affected_rows > 0) {
 
     <div class="container shadow-right" style="margin-top:60px; background-color:white; padding-top:10px; border-radius: 20px 20px 20px 0px; padding-bottom:20px">
         <div class="row">
-            <div class="col" style="padding-top:100px">
+            <div class="col" id="teamblurb">
                 <h4>
                     Our medical review team made of medical doctors always ensure
                     that our content is medically accurate.
