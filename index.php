@@ -428,7 +428,7 @@ if ($conn->affected_rows > 0) {
                 </h4>
                 <button class="btn btn-primary">Meet our team</button>
             </div>
-            <div class="col">
+            <div class="col-md">
                 <div class="row">
 
                     <div class="col-sm text-center">
