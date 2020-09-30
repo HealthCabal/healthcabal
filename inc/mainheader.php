@@ -286,6 +286,10 @@
             #space404 {
                 padding-bottom: 50px
             }
+
+            #ourteam {
+                margin-top: 80px;
+            }
         }
 
         .font-5 {
