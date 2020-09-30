@@ -398,9 +398,9 @@ if ($conn->affected_rows > 0) {
         </div>
     </div>
     <div class="container" id="ourpromise">
-        <div class="row">
+        <div class="row text-center">
             <div class="col-sm" style="margin-top:40px">
-                <h4 style="color:white" class="text-center">
+                <h4 style="color:white">
                     Our processes are optimized to ensure
                     information of the highest quality.
                 </h4>
