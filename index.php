@@ -431,14 +431,14 @@ if ($conn->affected_rows > 0) {
             <div class="col">
                 <div class="row">
 
-                    <div class="col text-center">
+                    <div class="col-sm text-center">
                         <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
                         <div class="w-100"></div>
                         <h4>Lorem Ipsum</h4>
                         <div class="w-100"></div>
                         MD, Family Medicine
                     </div>
-                    <div class="col text-center">
+                    <div class="col-sm text-center">
                         <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
                         <div class="w-100"></div>
                         <h4>Lorem Ipsum</h4>
@@ -446,7 +446,7 @@ if ($conn->affected_rows > 0) {
                         MD, Family Medicine
                     </div>
                     <div class="w-100"></div>
-                    <div class="col text-center">
+                    <div class="col-sm text-center">
                         <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
                         <div class="w-100"></div>
                         <h4>Lorem Ipsum</h4>
@@ -456,7 +456,7 @@ if ($conn->affected_rows > 0) {
                     <br>
                     <br>
                     <br>
-                    <div class="col text-center">
+                    <div class="col-sm text-center">
                         <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
                         <div class="w-100"></div>
                         <h4>Lorem Ipsum</h4>
