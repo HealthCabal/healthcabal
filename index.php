@@ -366,28 +366,79 @@ if ($conn->affected_rows > 0) {
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col featured-conditions mr-2">
-                <img src="assets/images/hc_heart.svg">
-                <h6 class="titletext center">HEART ATTACK</h6>
-            </div>
-            <div class="col-md featured-conditions mr-2">
-                <img class="img-responsive" src="assets/images/hc_diabetes.svg">
-                <h6 class="titletext center">DIABETES</h6>
-            </div>
-            <div class="col-md featured-conditions mr-2">
-                Hello world
-            </div>
-            <div class="col-md featured-conditions mr-2">
-                Hello world
-            </div>
-            <div class="col-md featured-conditions mr-2">
-                Hello world
-            </div>
-            <div class="col-md featured-conditions">
-                Hello world
+
+        <div class="container" id="desktopconditions">
+            <div class="row">
+                <div class="col-sm featured-conditions mr-2">
+                    <img class="img-fluid featured-conditions" src="assets/images/hc_heart-attack.png">
+                    <h6 class="titletext center">HEART ATTACK</h6>
+                </div>
+                <div class="col-sm featured-conditions mr-2">
+                    <img class="img-fluid featured-conditions" src="assets/images/hc_diabetes.png">
+                    <h6 class="titletext center">DIABETES</h6>
+                </div>
+                <div class="col-sm featured-conditions mr-2">
+                    <img class="img-fluid featured-conditions" src="assets/images/hc_cancer.png">
+                    <h6 class="titletext center">CANCER</h6>
+                </div>
+                <div class="col-sm featured-conditions mr-2">
+                    <img class="img-fluid featured-conditions" src="assets/images/hc_stroke.png">
+                    <h6 class="titletext center">STROKE</h6>
+                </div>
+                <div class="col-sm featured-conditions mr-2">
+                    <img class="img-fluid featured-conditions" src="assets/images/hc_fever.png">
+                    <h6 class="titletext center">FEVER</h6>
+                </div>
+                <div class="col-sm featured-conditions">
+                    <img class="img-fluid featured-conditions" src="assets/images/hc_std.png">
+                    <h6 class="titletext center">STDs</h6>
+                </div>
             </div>
         </div>
+    </div>
+
+
+    <div class="container" id="mobileconditions">
+        <div class="row">
+            <div class="col-sm text-center">
+                <img style="border-radius:50%; height:100px" src="assets/images/hc_heart-attack.png">
+                <div class="w-100"></div>
+                <h6 class="h6">HEART ATTACK</h6>
+            </div>
+
+            <div class="col-sm text-center">
+                <img style="border-radius:50%; height:100px" src="assets/images/hc_diabetes.png">
+                <div class="w-100"></div>
+                <h6 class="h6">DIABETES</h6>
+            </div>
+
+            <div class="col-sm text-center">
+                <img style="border-radius:50%; height:100px" src="assets/images/hc_cancer.png">
+                <div class="w-100"></div>
+                <h6 class="h6">CANCER</h6>
+            </div>
+
+            <div class="col-sm text-center">
+                <img style="border-radius:50%; height:100px" src="assets/images/hc_stroke.png">
+                <div class="w-100"></div>
+                <h6 class="h6">STROKE</h6>
+            </div>
+
+            <div class="col-sm text-center">
+                <img style="border-radius:50%; height:100px" src="assets/images/hc_fever.png">
+                <div class="w-100"></div>
+                <h6 class="h6">FEVER</h6>
+            </div>
+
+            <div class="col-sm text-center">
+                <img style="border-radius:50%; height:100px" src="assets/images/hc_std.png">
+                <div class="w-100"></div>
+                <h6 class="h6">STDs</h6>
+            </div>
+        </div>
+    </div>
+
+
     </div>
     <div class="container">
         <br>
@@ -399,20 +450,23 @@ if ($conn->affected_rows > 0) {
     </div>
     <div class="container" id="ourpromise">
         <div class="row text-center">
-            <div class="col-sm" style="margin-top:40px">
+            <div class="col-sm mt-5">
                 <h4 style="color:white">
                     Our processes are optimized to ensure
                     information of the highest quality.
                 </h4>
                 <button class="btn btn-primary text-center">More on our process</button>
             </div>
-            <div class="col-sm" style="margin-top:80px">
+            <div class="col-sm mt-5"">
+            <img src="assets/images/hc_doctor.svg" style="width:150px">
                 <h5 class="text-center" style="color:white">Written and verified by health experts.</h5>
             </div>
-            <div class="col-sm" style="margin-top:80px">
+            <div class="col-sm mt-5">
+                <img src="assets/images/hc_research.svg" style="width:150px">
                 <h5 class="text-center" style="color:white">Reviewed by certified professionals.</h5>
             </div>
-            <div class="col-sm" style="margin-top:80px">
+            <div class="col-sm mt-5">
+                <img src="assets/images/hc_update.svg" style="width:150px">
                 <h5 class="text-center" style="color:white">Updated to reflect latest medical advances.</h5>
             </div>
         </div>
@@ -422,26 +476,35 @@ if ($conn->affected_rows > 0) {
         <div class="row">
             <div class="col text-center" id="teamblurb">
                 <h4>
-                    Our medical review team made of medical doctors always ensure
+                    Our medical review team is up of medical doctors who always ensure
                     that our content is medically accurate.
                     Get to know our team.
                 </h4>
                 <button class="btn btn-primary">Meet our team</button>
             </div>
-            <div class="col-md"  id="ourteam">
+            <div class="col-md" id="ourteam">
                 <div class="row">
+
+                    <?php
+                    $fetchReviewers = "SELECT * FROM hc_users WHERE user_status = 1 AND user_type = 'reviewer' LIMIT 4";
+                    $getReviewers = $conn->query($fetchReviewers);
+                    while ($reviewBoard = $getReviewers->fetch_object()) {
+                        echo '
+                        <div class="col-sm text-center">
+                        <img style="border-radius:50%; height:100px" src="' . $reviewBoard->user_picture . '">
+                        <div class="w-100"></div>
+                        <h6 class="h6">' . $reviewBoard->user_fname . ' ' . $reviewBoard->user_lname . ', ' . $reviewBoard->user_prefix . '</h6>
+                        <div class="w-100"></div>
+                        ' . $reviewBoard->primary_practice . '
+                    </div>';
+                    }
+
+                    ?>
 
                     <div class="col-sm text-center">
                         <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
                         <div class="w-100"></div>
-                        <h4>Lorem Ipsum</h4>
-                        <div class="w-100"></div>
-                        MD, Family Medicine
-                    </div>
-                    <div class="col-sm text-center">
-                        <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
-                        <div class="w-100"></div>
-                        <h4>Lorem Ipsum</h4>
+                        <h6 class="h6">Lorem Ipsum</h6>
                         <div class="w-100"></div>
                         MD, Family Medicine
                     </div>
@@ -449,17 +512,14 @@ if ($conn->affected_rows > 0) {
                     <div class="col-sm text-center">
                         <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
                         <div class="w-100"></div>
-                        <h4>Lorem Ipsum</h4>
+                        <h6 class="h6">Lorem Ipsum</h6>
                         <div class="w-100"></div>
                         MD, Family Medicine
                     </div>
-                    <br>
-                    <br>
-                    <br>
                     <div class="col-sm text-center">
                         <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
                         <div class="w-100"></div>
-                        <h4>Lorem Ipsum</h4>
+                        <h6>Lorem Ipsum</h6>
                         <div class="w-100"></div>
                         MD, Family Medicine
                     </div>

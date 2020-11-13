@@ -13,7 +13,7 @@
             </form>
         </div>
         <div class="col-md-6">
-            <img src="assets/images/404_notfound.svg" alt="404 - not found." class="img img-responsive">
+            <img src="<?php echo $homeurl; ?>assets/images/404_notfound.svg" alt="404 - not found." class="img img-responsive">
         </div>
     </div>
 </div>

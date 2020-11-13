@@ -6,7 +6,7 @@
                     <div class="footer-widget">
                         <div class="footer-logo-wraper">
                             <a href="index-2.html" class="footer-logo">
-                            <img src="assets/images/logo-light.png" alt="">
+                            <img src="<?php echo $homeurl; ?>assets/images/logo-light.png" alt="">
                             </a>
                         </div>
                         <p>Address <a href="https://www.google.com/maps/place/London,+UK/@51.528308,-0.3817812,10z/data=!3m1!4b1!4m5!3m4!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5073509!4d-0.1277583"
@@ -29,7 +29,7 @@
                     <div class="footer-widget">
                         <h4 class="widget-title">About</h4>
                         <ul class="xs-list">
-                            <li><a href="about.html">Healthcabal</a></li>
+                            <li><a href="about">Healthcabal</a></li>
                             <li><a href="service.html">Our Company</a></li>
                             <li><a href="blog-grid-sidebar.html">Contact Us</a></li>
                             <!--li><a href="contact.html">Contact Us</a></li>

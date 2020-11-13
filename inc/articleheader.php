@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.html">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/iconfont.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
@@ -87,6 +87,7 @@
 
         body {
             background-color: white;
+            color:darkslategrey
         }
 
         .articleheader {
@@ -281,7 +282,7 @@
 
                 <ul>
                     <li class="nav-item dropdown has-megamenu">
-                        <a class="nav-link" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon icon-menu font-5"></span></a>
+                        <!--a class="nav-link" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon icon-menu font-5"></span></a-->
                         <div class="dropdown-menu megamenu">
                             <div class="row">
                                 <div class="col-lg-3">

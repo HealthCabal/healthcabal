@@ -1,5 +1,5 @@
 <?php
-$localhost = array("127.0.0.1", "::1");
+$localhost = array("127.0.0.1", "192.168.43.115", "::1");
 if (in_array($_SERVER['REMOTE_ADDR'], $localhost)) {
     $homeurl = "http://localhost/healthcabal/";
     $host = "localhost";
@@ -8,10 +8,17 @@ if (in_array($_SERVER['REMOTE_ADDR'], $localhost)) {
     $database = "healthcabal";
     $conn = new mysqli($host, $username, $password, $database);
 } else {
+    // $host = "localhost";
+    // $username = "healmsuw_dbboss";
+    // $password = "northshoreofmatsushima";
+    // $database = "healmsuw_hcdb2020";
+    // $conn = new mysqli($host, $username, $password, $database);
+
+    $homeurl = "http://192.168.43.115/healthcabal/";
     $host = "localhost";
-    $username = "healmsuw_dbboss";
-    $password = "northshoreofmatsushima";
-    $database = "healmsuw_hcdb2020";
+    $username = "root";
+    $password = "";
+    $database = "healthcabal";
     $conn = new mysqli($host, $username, $password, $database);
 
     /***

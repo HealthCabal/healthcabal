@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
+
+    <meta name="keywords" content="healthcabal, health cabal, health, cabal, health journal">
     <meta name="description" content="HealthCabal is Africa's leading destination for unbiased medical news and information,
      providing clear and credible health news and expert advice and data.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,30 +14,30 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CRoboto:400,500,700,900%7CPlayfair+Display:400,700,700i,900,900i%7CWork+Sans:400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Coustard&display=swap" rel="stylesheet">
     <!-- signatra-font -->
-    <link rel="stylesheet" href="assets/css/signatra-font.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/signatra-font.css">
 
     <link rel="icon" type="image/png" href="favicon.html">
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="apple-touch-icon.html">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/iconfont.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/rev-settings.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/animate.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/iconfont.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/swiper.min.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/rev-settings.css">
 
     <!--For Plugins external css-->
-    <link rel="stylesheet" href="assets/css/plugins.css" />
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/plugins.css" />
 
     <!--Theme custom css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/style.css">
 
     <!--Theme Responsive css-->
-    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/responsive.css" />
 </head>
 
 <body>
@@ -85,6 +87,11 @@
 
         body {
             background-color: #F7F9F9;
+            color: darkslategrey
+        }
+
+        .h6 {
+            color: #00323D
         }
 
         #ourpromise {
@@ -100,6 +107,15 @@
         }
 
         @media all and (min-width: 992px) {
+
+            .featured-conditions {
+                height: 150px;
+                background-color: white;
+                border-right-style: 3px solid red;
+                border-radius: 10px;
+                margin-right: 10;
+            }
+
             .navbar {
                 padding-top: 0;
                 padding-bottom: 0;
@@ -237,13 +253,7 @@
             text-align: center;
         }
 
-        .featured-conditions {
-            height: 150px;
-            background-color: white;
-            border-right-style: 3px solid red;
-            border-radius: 10px;
-            margin-right: 10;
-        }
+
 
         .home-buttons {
             background-color: #053641;
@@ -252,11 +262,28 @@
             margin-top: 10px;
         }
 
-        #teamblurb{
+        #teamblurb {
             padding-top: 100px;
         }
 
+        #mobileconditions {
+            display: none;
+        }
+
         @media (max-width: 991.98px) {
+            .featured-conditions {
+                height: 150px;
+                text-align: center;
+            }
+
+            #desktopconditions {
+                display: none;
+            }
+
+            #mobileconditions {
+                display: block;
+            }
+
             .top-right-col {
                 height: 330px;
                 border-bottom-right-radius: 10px;
@@ -294,9 +321,9 @@
             #ourteam {
                 margin-top: 80px;
             }
-            
-            #teamblurb{
-                padding-top:50px;
+
+            #teamblurb {
+                padding-top: 50px;
             }
         }
 
@@ -355,7 +382,7 @@
                         </div> <!-- dropdown-mega-menu.// -->
                     </li>
                 </ul>
-                <a class="navbar-brand col-md-3 offset-md-2" href="<?php echo $homeurl; ?>"><img src="assets/images/logo.png" width="150"></a>
+                <a class="navbar-brand col-md-3 offset-md-2" href="<?php echo $homeurl; ?>"><img src="<?php echo $homeurl; ?>assets/images/logo.png" width="150"></a>
 
                 <form class="form-inline my-2 my-md-0">
                     <input class="form-control" type="text" placeholder="Search" aria-label="Search">
