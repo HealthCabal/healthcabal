@@ -189,7 +189,7 @@ if ($conn->affected_rows > 0) {
     require_once("inc/footer.php");
     die();
 } elseif (!isset($_REQUEST['post_slug'])) {
-    $title = "HealthCabal - Credible Health Information Anytime, Anywhere";
+    $title = "Healthcabal - Reimagining Healthcare Content";
     require_once("inc/mainheader.php");
     require_once("classes/posts.php");
     $value = 1;
@@ -207,18 +207,18 @@ if ($conn->affected_rows > 0) {
             <div class="row">
                 <div class="col-sm-6">
                     <br>
-                    <h5 class="headtext">Trusted source of health information</h5>
-                    <p class="headsub small">Health is life. Read from the right source</p>
+                    <h5 class="headtext">Trusted Source of Health Information</h5>
+                    <p class="headsub small">Reimagining Healthcare Content</p>
                 </div>
                 <div class="col-sm">
                     <br>
-                    <h5 class="headtext"> Professionally written</h5>
-                    <p class="headsub small">Medically reviewed.</p>
+                    <h5 class="headtext"> Written By Professionals</h5>
+                    <p class="headsub small">Medically Reviewed By Doctors</p>
                 </div>
 
                 <div class="col-sm">
                     <br>
-                    <h5 class="headtext"> Talk with a doctor</h5>
+                    <h5 class="headtext"> Talk With a Doctor</h5>
                     <p class="headsub small"><span class="icon icon-message"></span> Chat | <span class="icon icon-phone"></span> Voice | <span class="icon icon-camera-video"></span> Video</p>
 
                 </div>
@@ -246,18 +246,25 @@ if ($conn->affected_rows > 0) {
             </div>
             <div class="row col-md-3 col-sm-12">
                 <div class="col-md top-right-col  shadow-right homeboxes" style="height:490px;" id="home-right">
-                    <div class="homefeaturedimgs">
-                        <img class="grow img-fluid fit-image" src="https://images.theconversation.com/files/325615/original/file-20200406-103690-wgn3l7.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop">
+                <?php
+                $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 0, 1";
+                $fetchRight = $conn->query($query);
+                while($topRight = $fetchRight->fetch_assoc()){
+                   echo ' <div class="homefeaturedimgs">
+                        <img class="grow img-fluid fit-image" src="'.$topRight['post_featured_img'].'">
                     </div>
                     <div style="height:auto" class="posttitle">
-                        <h6 class="grow titletext mt-1">All you need to know about ventilators</h6>
-                    </div>
+                       <a href="'.$topRight['post_slug'].'"> <h6 class="grow titletext mt-1">'.$topRight['post_title'].'</h6></a>
+                    </div>';
+                }
+                ?>
+                   
 
 
                     <div style="height:auto" class="posttitle">
                         <?php
                         $start = 0;
-                        $end = 5;
+                        $end = 8;
                         $postHandler->fetchTopRightPosts($conn, $start, $end);
                         ?>
                     </div>
@@ -277,8 +284,8 @@ if ($conn->affected_rows > 0) {
             </div-->
             </div>
             <div class="col-md-3 shadow-right" style="height:490px; margin-top:10px; border-radius:10px 10px 10px 0px; background-color: #BAF8FF">
-                <h4 style="padding-top:10px">Check out the hottest topics</h4>
-                <p style="color:black">Selected by out editors, these topics represent what lots of people are searching for at the moment.</p>
+                <h4 style="padding-top:10px">Check out the most popular topics</h4>
+                <p style="color:black">These are the most-read topics at the moment.</p>
 
                 <button class="btn btn-sm home-buttons" style="background-color:#053641">
                     Stroke
@@ -309,8 +316,8 @@ if ($conn->affected_rows > 0) {
 
 
             <?php
-            $stat = 6;
-            $end = 9;
+            $start = 0;
+            $end = 4;
             $postHandler->fetchFeaturedPosts($conn, $start, $end, $homeurl)
             ?>
             <!--div class="row col-md col-sm-12">
@@ -458,7 +465,7 @@ if ($conn->affected_rows > 0) {
                 <button class="btn btn-primary text-center">More on our process</button>
             </div>
             <div class="col-sm mt-5"">
-            <img src="assets/images/hc_doctor.svg" style="width:150px">
+            <img src=" assets/images/hc_doctor.svg" style="width:150px">
                 <h5 class="text-center" style="color:white">Written and verified by health experts.</h5>
             </div>
             <div class="col-sm mt-5">
@@ -501,28 +508,9 @@ if ($conn->affected_rows > 0) {
 
                     ?>
 
-                    <div class="col-sm text-center">
-                        <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
-                        <div class="w-100"></div>
-                        <h6 class="h6">Lorem Ipsum</h6>
-                        <div class="w-100"></div>
-                        MD, Family Medicine
-                    </div>
+
                     <div class="w-100"></div>
-                    <div class="col-sm text-center">
-                        <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
-                        <div class="w-100"></div>
-                        <h6 class="h6">Lorem Ipsum</h6>
-                        <div class="w-100"></div>
-                        MD, Family Medicine
-                    </div>
-                    <div class="col-sm text-center">
-                        <img style="border-radius:50%; height:100px" src="https://www.urbanpedaltours.com/wp-content/uploads/2019/04/team.png">
-                        <div class="w-100"></div>
-                        <h6>Lorem Ipsum</h6>
-                        <div class="w-100"></div>
-                        MD, Family Medicine
-                    </div>
+
 
                 </div>
             </div>

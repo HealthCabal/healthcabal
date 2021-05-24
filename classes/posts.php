@@ -18,17 +18,17 @@ class Posts extends Crud
 
     function fetchTopRightPosts($conn, $start, $end)
     {
-        $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 LIMIT $start, $end";
+        $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT $start, $end";
         $result  = $conn->query($query);
         while ($featuredPostVertical = $result->fetch_assoc()) {
-            echo '<h6 class="grow titletext mt-1">' . $featuredPostVertical['post_title'] . '</h6>';
+            echo '<a href="'.$featuredPostVertical['post_slug'].'"><h6 class="grow titletext mt-1">' . $featuredPostVertical['post_title'] . '</h6></a>';
         }
     }
 
 
     function fetchRelatedPosts($conn, $postSlug, $postCat)
     {
-        $query = "SELECT * FROM hc_posts WHERE post_child_cat = $postCat";
+        $query = "SELECT * FROM hc_posts WHERE post_child_cat = $postCat AND post_status = 1 ORDER BY ID DESC LIMIT 8";
         //die($query);
         $related = $conn->query($query);
         $relatedPosts[] = $related->fetch_array();
@@ -44,7 +44,7 @@ class Posts extends Crud
 
     function fetchFeaturedPosts($conn, $start, $end, $homeurl)
     {
-        $query = "SELECT hc_posts.ID, hc_posts.post_featured_img, hc_posts.post_category, hc_posts.post_title, hc_posts.post_slug, hc_categories.cat_name, hc_categories.ID FROM hc_posts, hc_categories WHERE hc_categories.ID = hc_posts.post_category AND hc_posts.post_home_featured = 1 LIMIT $start, $end";
+        $query = "SELECT hc_posts.ID, hc_posts.post_featured_img, hc_posts.post_category, hc_posts.post_title, hc_posts.post_slug, hc_categories.cat_name, hc_categories.ID FROM hc_posts, hc_categories WHERE hc_categories.ID = hc_posts.post_category AND hc_posts.post_home_featured = 1 ORDER BY hc_posts.ID DESC LIMIT $start, $end";
         //die($query);
         $result  = $conn->query($query);
         while ($featuredPosts = $result->fetch_assoc()) {

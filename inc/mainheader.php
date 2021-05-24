@@ -6,17 +6,36 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64690490-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-64690490-1');
+
+        var elements = document.getElementsByTagName("*");
+        for (var id = 0; id < elements.length; ++id) {
+            elements[id].oncontextmenu = null;
+        }
+    </script>
+
+
     <meta name="keywords" content="healthcabal, health cabal, health, cabal, health journal">
     <meta name="description" content="HealthCabal is Africa's leading destination for unbiased medical news and information,
      providing clear and credible health news and expert advice and data.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CRoboto:400,500,700,900%7CPlayfair+Display:400,700,700i,900,900i%7CWork+Sans:400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Coustard&display=swap" rel="stylesheet">
     <!-- signatra-font -->
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/signatra-font.css">
 
-    <link rel="icon" type="image/png" href="favicon.html">
+    <link rel="icon" type="image/png" href="<?php echo $homeurl; ?>assets/images/hc-favicon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="apple-touch-icon.html">
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/font-awesome.min.css">

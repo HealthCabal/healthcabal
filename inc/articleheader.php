@@ -10,6 +10,25 @@
     <meta name="keywords" content="<?php echo $postData['post_keywords']; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64690490-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-64690490-1');
+
+        var elements = document.getElementsByTagName("*");
+        for (var id = 0; id < elements.length; ++id) {
+            elements[id].oncontextmenu = null;
+        }
+    </script>
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CRoboto:400,500,700,900%7CPlayfair+Display:400,700,700i,900,900i%7CWork+Sans:400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Coustard&display=swap" rel="stylesheet">
     <!-- signatra-font -->
@@ -87,7 +106,7 @@
 
         body {
             background-color: white;
-            color:darkslategrey
+            color: darkslategrey
         }
 
         .articleheader {
@@ -269,11 +288,12 @@
                 margin-bottom: 200px;
             }
 
-            
+
         }
-        .font-5{
-                font-size:50px
-            }
+
+        .font-5 {
+            font-size: 50px
+        }
     </style>
     <header class="xs-header header-style9 sticky-top" style="background-color: white;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -336,4 +356,4 @@
 
     </header>
     <!-- header section -->
-        <!--https://bootstrap-menu.com/detail-megamenu.html-->
+    <!--https://bootstrap-menu.com/detail-megamenu.html-->

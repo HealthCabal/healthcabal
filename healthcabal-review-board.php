@@ -49,10 +49,11 @@ require_once("inc/mainheader.php");
     <div class="col-md-3">
     <img style="border-radius:10%; height:150px" src="' . $reviewBoard->user_picture . '">
     </div>
-    <div class="col">
+    <div class="col-md-3">
     <h6 class="h6">' . $reviewBoard->user_fname . ' ' . $reviewBoard->user_lname . ', ' . $reviewBoard->user_prefix . '</h6>
     ' . $reviewBoard->primary_practice . '
-    ' . $reviewBoard->user_about . '
+    ' . substr($reviewBoard->user_about, 0, 90) . '. . .
+    <button class="mt-1 mb-5 btn btn-secondary" style="background-color: #00323D; height:50px; padding-left:20px; padding-right:20px">Read more</button>
     </div>';
                     }
 

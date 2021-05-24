@@ -6,22 +6,23 @@
                     <div class="footer-widget">
                         <div class="footer-logo-wraper">
                             <a href="index-2.html" class="footer-logo">
-                            <img src="<?php echo $homeurl; ?>assets/images/logo-light.png" alt="">
+                                <img src="<?php echo $homeurl; ?>assets/images/logo-light.png" alt="">
                             </a>
                         </div>
-                        <p>Address <a href="https://www.google.com/maps/place/London,+UK/@51.528308,-0.3817812,10z/data=!3m1!4b1!4m5!3m4!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5073509!4d-0.1277583"
-                                target="_blank">12B, Zango Road, Eliozu, PHC.</a></p>
-                        <p>Contact Info <a href="tel:+1%20998%20150%30%2020"> +234 816 8988</a> <a href="mailto:info@agencify.com">info@healthcabal.com</a></p>
+                        <!--h4 class="widget-title">Contact Info</h4>
+                            <li> +234 816 8988</li>
+                         <li>healthcabal@gmail.com</li-->
+                        </p>
                     </div><!-- .footer-widget END -->
                 </div>
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
                         <h4 class="widget-title">Hot Topics</h4>
                         <ul class="xs-list">
-                            <li><a href="portfolio.html">Heart Attack</a></li>
-                            <li><a href="portfolio-masonry.html">Diabetes</a></li>
-                            <li><a href="portfolio.html">Stroke</a></li>
-                            <li><a href="portfolio.html">High Blood Pressure</a></li>
+                            <li><a href="#!">Heart Attack</a></li>
+                            <li><a href="#!">Diabetes</a></li>
+                            <li><a href="#!">Stroke</a></li>
+                            <li><a href="#!">High Blood Pressure</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
@@ -30,8 +31,8 @@
                         <h4 class="widget-title">About</h4>
                         <ul class="xs-list">
                             <li><a href="about">Healthcabal</a></li>
-                            <li><a href="service.html">Our Company</a></li>
-                            <li><a href="blog-grid-sidebar.html">Contact Us</a></li>
+                            <li><a href="#!">Our Company</a></li>
+                            <li><a href="#!">Contact Us</a></li>
                             <!--li><a href="contact.html">Contact Us</a></li>
                             <li><a href="cases.html">Case</a></li>
                             <li><a href="shop.html">Shop</a></li>
@@ -44,19 +45,19 @@
                         <h4 class="widget-title">Our Other Sites</h4>
                         <ul class="xs-list">
                             <li><a href="about.html">Medcabal</a></li>
-                            <li><a href="about.html">Fitcabal</a></li>
+                            <!--li><a href="about.html">Fitcabal</a></li>
                             <li><a href="about.html">Mencabal</a></li>
-                            <li><a href="about.html">Womencabal</a></li>
+                            <li><a href="about.html">Womencabal</a></li--!>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
-            
+
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
                         <h4 class="widget-title">Editorial</h4>
                         <ul class="xs-list">
                             <li><a href="#">Our Editorial Process</a></li>
-                            <li><a href="#">Our Review Board</a></li>
+                            <li><a href="healthcabal-review-board">Our Review Board</a></li>
                             <li><a href="#">Legal info</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
@@ -98,38 +99,38 @@
         </div>
     </div><!-- .footer-bottom-area END -->
 </footer>
-<!-- footer section end -->	
-		
-		<!-- js file start -->
-		<script src="assets/js/jquery-3.2.1.min.js"></script>
-		<script src="assets/js/plugins.js"></script>
-		<script src="assets/js/Popper.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/jquery.magnific-popup.min.js"></script>
-		<script src="assets/js/owl.carousel.min.js"></script>
-		<script src="assets/js/scrollax.js"></script>
-		<script src="assets/js/jquery.ajaxchimp.min.js"></script>
-		<script src="assets/js/jquery.waypoints.min.js"></script>
-		<script src="assets/js/isotope.pkgd.min.js"></script>
-		<script src="assets/js/swiper.min.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyDeZubzJTQgtjreqsdaGMGXxaxP-pv6pSk"></script>
-		<script src="assets/js/jquery.easypiechart.min.js"></script>
-		<script src="assets/js/delighters.js"></script>
-		<script src="assets/js/typed.js"></script>
-		<script src="assets/js/jquery.parallax.js"></script>
-		<script src="assets/js/jquery.themepunch.tools.min.js"></script>
-		<script src="assets/js/jquery.themepunch.revolution.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.actions.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.carousel.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.kenburn.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.migration.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.navigation.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.parallax.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.slideanims.min.js"></script>
-		<script src="assets/js/extensions/revolution.extension.video.min.js"></script>
-		<script src="assets/js/skrollr.min.js"></script>
-		<script src="assets/js/shuffle-letters.js"></script>
-		<script src="assets/js/main.js"></script>		<!-- End js file -->
-        
+<!-- footer section end -->
+
+<!-- js file start -->
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/Popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/scrollax.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyDeZubzJTQgtjreqsdaGMGXxaxP-pv6pSk"></script>
+<script src="assets/js/jquery.easypiechart.min.js"></script>
+<script src="assets/js/delighters.js"></script>
+<script src="assets/js/typed.js"></script>
+<script src="assets/js/jquery.parallax.js"></script>
+<script src="assets/js/jquery.themepunch.tools.min.js"></script>
+<script src="assets/js/jquery.themepunch.revolution.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="assets/js/extensions/revolution.extension.video.min.js"></script>
+<script src="assets/js/skrollr.min.js"></script>
+<script src="assets/js/shuffle-letters.js"></script>
+<script src="assets/js/main.js"></script> <!-- End js file -->
+
 </body>
