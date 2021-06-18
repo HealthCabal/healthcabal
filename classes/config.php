@@ -8,18 +8,19 @@ if (in_array($_SERVER['REMOTE_ADDR'], $localhost)) {
     $database = "healthcabal";
     $conn = new mysqli($host, $username, $password, $database);
 } else {
-    // $host = "localhost";
-    // $username = "healmsuw_dbboss";
-    // $password = "northshoreofmatsushima";
-    // $database = "healmsuw_hcdb2020";
-    // $conn = new mysqli($host, $username, $password, $database);
-
-    $homeurl = "http://192.168.43.115/healthcabal/";
+    $homeurl = "http://demo.healthcabal.com";
     $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "healthcabal";
+    $username = "healmsuw_dbboss";
+    $password = "northshoreofmatsushima";
+    $database = "healmsuw_hcdb2020";
     $conn = new mysqli($host, $username, $password, $database);
+
+    // $homeurl = "http://192.168.43.115/healthcabal/";
+    // $host = "localhost";
+    // $username = "root";
+    // $password = "";
+    // $database = "healthcabal";
+    // $conn = new mysqli($host, $username, $password, $database);
 
     /***
     $homeurl = "";
