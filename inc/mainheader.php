@@ -344,6 +344,11 @@
             #teamblurb {
                 padding-top: 50px;
             }
+
+            .ad-sidebar{
+                padding-top:20px;
+                margin: auto, 0px;
+            }
         }
 
         .font-5 {
