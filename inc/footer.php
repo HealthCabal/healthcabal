@@ -5,10 +5,12 @@
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
                         <div class="footer-logo-wraper">
-                            <a href="index-2.html" class="footer-logo">
-                                <img src="<?php echo $homeurl; ?>assets/images/logo-light.png" alt="">
+                            <a href="<?php echo $homeurl ?>" class="footer-logo">
+                                <img src="<?php echo $homeurl; ?>assets/images/logo-light.png" alt="HealthCabal Logo">
                             </a>
                         </div>
+                        <p class="copyright-section">HealthCabal is owned and managed by WellXo Limited.</p>
+
                         <!--h4 class="widget-title">Contact Info</h4>
                             <li> +234 816 8988</li>
                          <li>healthcabal@gmail.com</li-->
@@ -31,23 +33,11 @@
                         <h4 class="widget-title">About</h4>
                         <ul class="xs-list">
                             <li><a href="about">Healthcabal</a></li>
-                            <li><a href="#!">Our Company</a></li>
-                            <li><a href="#!">Contact Us</a></li>
+                            <li><a href="https://blog.healthcabal.com">Company Blog</a></li>
                             <!--li><a href="contact.html">Contact Us</a></li>
                             <li><a href="cases.html">Case</a></li>
                             <li><a href="shop.html">Shop</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li-->
-                        </ul><!-- .xs-list END -->
-                    </div><!-- .footer-widget END -->
-                </div>
-                <div class="col-md-6 col-lg-2">
-                    <div class="footer-widget">
-                        <h4 class="widget-title">Our Other Sites</h4>
-                        <ul class="xs-list">
-                            <li><a href="about.html">Medcabal</a></li>
-                            <!--li><a href="about.html">Fitcabal</a></li>
-                            <li><a href="about.html">Mencabal</a></li>
-                            <li><a href="about.html">Womencabal</a></li--!>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
@@ -56,9 +46,8 @@
                     <div class="footer-widget">
                         <h4 class="widget-title">Editorial</h4>
                         <ul class="xs-list">
-                            <li><a href="#">Our Editorial Process</a></li>
+                            <li><a href="healthcabal-editorial-process">Our Editorial Process</a></li>
                             <li><a href="healthcabal-review-board">Our Review Board</a></li>
-                            <li><a href="#">Legal info</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
@@ -73,6 +62,17 @@
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget">
+                        <h4 class="widget-title">Follow Us</h4>
+                        <ul class="xs-list">
+                            <li><a href="https://facebook.com/healthcabal">Facebook</a></li>
+                            <li><a href="https://twitter.com/healthcabal">Twitter</a></li>
+                        </ul><!-- .xs-list END -->
+                    </div><!-- .footer-widget END -->
+                </div>
+
             </div><!-- .row END -->
         </div><!-- .container END -->
     </div><!-- .footer-top-area END -->
@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="copyright-section">
-                        <p>Copyright <?php echo date('Y') ?>, <a href="https://healthcabal.com">Healthcabal</a>
+                        <p>Copyright <?php echo date('Y') ?>, <a href="https://wellxo.health">WellXo Ltd.</a>
                             All Rights Reserved.</p>
                     </div><!-- .copyright-section END -->
                 </div>
@@ -113,10 +113,7 @@
 <script src="assets/js/jquery.waypoints.min.js"></script>
 <script src="assets/js/isotope.pkgd.min.js"></script>
 <script src="assets/js/swiper.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyDeZubzJTQgtjreqsdaGMGXxaxP-pv6pSk"></script>
-<script src="assets/js/jquery.easypiechart.min.js"></script>
 <script src="assets/js/delighters.js"></script>
-<script src="assets/js/typed.js"></script>
 <script src="assets/js/jquery.parallax.js"></script>
 <script src="assets/js/jquery.themepunch.tools.min.js"></script>
 <script src="assets/js/jquery.themepunch.revolution.min.js"></script>
@@ -130,7 +127,6 @@
 <script src="assets/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="assets/js/extensions/revolution.extension.video.min.js"></script>
 <script src="assets/js/skrollr.min.js"></script>
-<script src="assets/js/shuffle-letters.js"></script>
 <script src="assets/js/main.js"></script> <!-- End js file -->
 
 </body>

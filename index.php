@@ -48,7 +48,7 @@ if ($conn->affected_rows > 0) {
 
 
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-3" style="padding-top:30px">
                         <!--img src="https://www.verywellhealth.com/thmb/TvztNApqnUbUzxZR4S_-Lvz6ngI=/220x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/news-illo-health-92feca2e52e44c5488b8349e22518212.png" alt="" class="img-responsive"-->
                         <?php
                         if ($postData['post_series'] !== "" && $postData['post_series'] !== NULL && $postData['post_series'] !== 0) {
@@ -63,15 +63,61 @@ if ($conn->affected_rows > 0) {
                         ?>
                     </div>
 
-                    <div class="col-sm">
+                    <div class="col-sm" style="padding-top:30px">
                         <?php echo $postData['post_content']; ?>
+
+
+
+                        <!--Mailchimp starts here-->
+                        <div class="container" style="background-color: #05e4c0; border-radius: 0px 20px 0px 20px; margin-top: 50px; margin-bottom:20">
+                            <!-- Begin Mailchimp Signup Form -->
+                            <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                            <style type="text/css">
+                                #mc_embed_signup {
+                                    background: transparent;
+                                    clear: left;
+                                    font: 14px Helvetica, Arial, sans-serif;
+                                    width: 100%;
+                                    color: #00323d;
+                                    padding-top: 30px;
+                                    padding-bottom: 50px;
+                                    padding-right: 30px;
+                                    padding-left: 100px;
+                                }
+
+                                /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                            </style>
+                            <div id="mc_embed_signup">
+                                <h2>Stay Updated!</h2>
+                                <p>Subscribe to our newsletter.
+                                <h5>Get a weekly roundup of our top articles and stay informed about the latest and best practices to keep you healthy and strong.</h5>
+                                <form action="https://healthcabal.us1.list-manage.com/subscribe/post?u=b3c0b9b27da524abe9acfd0df&amp;id=6749df06cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll">
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3c0b9b27da524abe9acfd0df_6749df06cb" tabindex="-1" value=""></div>
+                                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #00323d;"></div>
+                                    </div>
+                                </form>
+                                <strong>Follow us on <a href="https://twitter.com/healthcabal" target="_blank">Twitter</a> and <a href="https://facebook.com/healthcabal" target="_blank"> Facebook</a>.</strong>
+                                
+                            </div>
+
+                            <!--End mc_embed_signup-->
+
+                        </div>
                     </div>
+
                 </div>
+
             </div>
 
 
             <div class="col-md" style="padding-left:0px; padding-right:0px; width:300px">
-                Trying to navigate social interaction during a summer
+            <!--Trying to navigate social interaction during a summer-->
+
+                <a href="https://wellxo.health" target="_blank"><img src="https://z-p3-scontent-los2-1.xx.fbcdn.net/v/t1.6435-9/187692988_3818908811541305_6910330521458322189_n.png?_nc_cat=109&ccb=1-3&_nc_sid=973b4a&_nc_ohc=eRlhDliJ108AX_iqcBB&_nc_ht=z-p3-scontent-los2-1.xx&oh=41cd2c85f28ac557ba78abd634871139&oe=60D12205"></a>
             </div>
         </div>
     </div>
@@ -207,19 +253,19 @@ if ($conn->affected_rows > 0) {
             <div class="row">
                 <div class="col-sm-6">
                     <br>
-                    <h5 class="headtext">Trusted Source of Health Information</h5>
-                    <p class="headsub small">Reimagining Healthcare Content</p>
+                    <h5 class="headtext">Reimagining Healthcare Content</h5>
+                    <p class="headsub">Trusted Source of Health Information</p>
                 </div>
                 <div class="col-sm">
                     <br>
                     <h5 class="headtext"> Written By Professionals</h5>
-                    <p class="headsub small">Medically Reviewed By Doctors</p>
+                    <p class="headsub">Reviewed By professionals</p>
                 </div>
 
                 <div class="col-sm">
                     <br>
-                    <h5 class="headtext"> Talk With a Doctor</h5>
-                    <p class="headsub small"><span class="icon icon-message"></span> Chat | <span class="icon icon-phone"></span> Voice | <span class="icon icon-camera-video"></span> Video</p>
+                    <h5 class="headtext"> <a href="http://wellxo.health" target="_blank" style="color:white"> Talk With a Doctor</a></h5>
+                    <p class="headsub"><span class="icon icon-message"></span> Chat | <span class="icon icon-phone"></span> Voice | <span class="icon icon-camera-video"></span> Video</p>
 
                 </div>
             </div>
@@ -246,42 +292,38 @@ if ($conn->affected_rows > 0) {
             </div>
             <div class="row col-md-3 col-sm-12">
                 <div class="col-md top-right-col  shadow-right homeboxes" style="height:490px;" id="home-right">
-                <?php
-                $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 0, 1";
-                $fetchRight = $conn->query($query);
-                while($topRight = $fetchRight->fetch_assoc()){
-                   echo ' <div class="homefeaturedimgs">
-                        <img class="grow img-fluid fit-image" src="'.$topRight['post_featured_img'].'">
+                    <?php
+                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 0, 1";
+                    $fetchRight = $conn->query($query);
+                    while ($topRight = $fetchRight->fetch_assoc()) {
+                        echo ' <div class="homefeaturedimgs">
+                        <img class="grow img-fluid fit-image" src="' . $topRight['post_featured_img'] . '">
                     </div>
                     <div style="height:auto" class="posttitle">
-                       <a href="'.$topRight['post_slug'].'"> <h6 class="grow titletext mt-1">'.$topRight['post_title'].'</h6></a>
+                       <a href="' . $topRight['post_slug'] . '"> <h6 class="grow titletext mt-1">' . $topRight['post_title'] . '</h6></a>
                     </div>';
-                }
-                ?>
-                   
-
-
-                    <div style="height:auto" class="posttitle">
-                        <?php
-                        $start = 0;
-                        $end = 8;
-                        $postHandler->fetchTopRightPosts($conn, $start, $end);
-                        ?>
+                    }
+                    ?>
+                    <div style="height: 40px">
                     </div>
+                    <?php
+                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 0, 1";
+                    $fetchRight = $conn->query($query);
+                    while ($topRight = $fetchRight->fetch_assoc()) {
+                        echo ' <div class="homefeaturedimgs">
+                        <img class="grow img-fluid fit-image" src="' . $topRight['post_featured_img'] . '">
+                    </div>
+                    <div style="height:auto" class="posttitle">
+                       <a href="' . $topRight['post_slug'] . '"> <h6 class="grow titletext mt-1">' . $topRight['post_title'] . '</h6></a>
+                    </div>';
+                    }
+                    ?>
+
+
+
                 </div>
 
-                <!-- Force next columns to break to new line at md breakpoint and up >
-            <div class="w-100 d-none d-md-block"></div-->
 
-                <!--div class="col-md shadow-right mobile-divs-home" style="height: auto; padding-top:0px;">
-                <div class="homefeaturedimgs" style="height:100px">
-                    <img class="grow img-fluid fit-image" src="https://i.guim.co.uk/img/media/4cdefdd5d3ea3beed021f40dd79836a1006585ab/0_214_5100_3060/master/5100.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=8ecdddf6b7f76c8a0b3b4ed605b749b6">
-                </div>
-                <div style="height:auto" class="posttitle mt-1 mb-4">
-                    <h6 class="grow titletext">Living with colds: How some have coped with it</h6>
-                    <p class="grow titletext">By Ezra Chimezie</p>
-                </div>
-            </div-->
             </div>
             <div class="col-md-3 shadow-right" style="height:490px; margin-top:10px; border-radius:10px 10px 10px 0px; background-color: #BAF8FF">
                 <h4 style="padding-top:10px">Check out the most popular topics</h4>
@@ -462,7 +504,7 @@ if ($conn->affected_rows > 0) {
                     Our processes are optimized to ensure
                     information of the highest quality.
                 </h4>
-                <button class="btn btn-primary text-center">More on our process</button>
+                <a href="healthcabal-editorial-process"><button class="btn btn-primary text-center">More on our process</button></a>
             </div>
             <div class="col-sm mt-5"">
             <img src=" assets/images/hc_doctor.svg" style="width:150px">
@@ -483,11 +525,11 @@ if ($conn->affected_rows > 0) {
         <div class="row">
             <div class="col text-center" id="teamblurb">
                 <h4>
-                    Our medical review team is up of medical doctors who always ensure
+                    Our medical review team is made up of medical doctors who always ensure
                     that our content is medically accurate.
                     Get to know our team.
                 </h4>
-                <button class="btn btn-primary">Meet our team</button>
+                <a href="healthcabal-review-board"><button class="btn btn-primary">Meet our team</button></a>
             </div>
             <div class="col-md" id="ourteam">
                 <div class="row">

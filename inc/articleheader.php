@@ -10,6 +10,18 @@
     <meta name="keywords" content="<?php echo $postData['post_keywords']; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!--social media meta tags-->
+
+    <meta property="og:title" content="<?php echo $postData['post_title']; ?>">
+    <meta property="og:description" content="<?php echo $postData['post_description']; ?>">
+    <meta property="og:image" content="<?php echo $postData['post_featured_img']; ?>">
+    <meta property="og:url" content="<?php echo $homeurl . "/" . $postData['post_slug']; ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="<?php echo $postData['post_featured_img']; ?>">
+    <meta property="og:site_name" content="HealthCabal - Reimagining Health Content">
+    <meta name="twitter:image:alt" content="Image failed to load">
+
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64690490-1"></script>
@@ -296,14 +308,14 @@
         }
     </style>
     <header class="xs-header header-style9 sticky-top" style="background-color: white;">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top:10px; padding-bottom: 10px">
             <div class="container">
 
 
-                <ul>
+                <!--ul>
                     <li class="nav-item dropdown has-megamenu">
-                        <!--a class="nav-link" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon icon-menu font-5"></span></a-->
-                        <div class="dropdown-menu megamenu">
+                        <!--    a class="nav-link" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon icon-menu font-5"></span></a-->
+                <!--div class="dropdown-menu megamenu">
                             <div class="row">
                                 <div class="col-lg-3">
                                     <ul class="xs-icon-menu">
@@ -313,7 +325,7 @@
                                         <li class="single-menu-item"><a href="video-popup.html"><i class="icon icon-video-camera"></i>Video PopUp</a></li>
                                         <li class="single-menu-item"><a href="section-title.html"><i class="icon icon-pencil"></i>Section Title</a></li>
                                     </ul><!-- .xs-icon-menu END -->
-                                </div>
+                <!--/div>
                                 <div class="col-lg-3">
                                     <ul class="xs-icon-menu">
                                         <li class="single-menu-item"><a href="contact-form.html"><i class="icon icon-email"></i>Contact Input</a></li>
@@ -322,7 +334,7 @@
                                         <li class="single-menu-item"><a href="blog-block.html"><i class="icon icon-file-2"></i>Blog BLock</a></li>
                                         <li class="single-menu-item"><a href="service-block.html"><i class="icon icon-settings"></i>Service BLock</a></li>
                                     </ul><!-- .xs-icon-menu END -->
-                                </div>
+                <!--/div>
                                 <div class="col-lg-3">
                                     <ul class="xs-icon-menu">
                                         <li class="single-menu-item"><a href="clients.html"><i class="icon icon-user-1"></i>Clients</a></li>
@@ -343,14 +355,14 @@
                                 </div>
                             </div><!-- .row END -->
 
-                        </div> <!-- dropdown-mega-menu.// -->
-                    </li>
-                </ul>
-                <a class="navbar-brand col-md-3 offset-md-2" href="<?php echo $homeurl; ?>"><img src="assets/images/logo.png" width="150"></a>
+                <!--/div> <!-- dropdown-mega-menu.// -->
+                <!--/li>
+                </ul-->
+                <a class="navbar-brand col-md-3 mx-auto d-block" href="<?php echo $homeurl; ?>"><img src="<?php echo $homeurl; ?>assets/images/logo.png" class="text-center" width="200"></a>
 
-                <form class="form-inline my-2 my-md-0">
+                <!--form class="form-inline my-2 my-md-0">
                     <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                </form>
+                </form-->
             </div>
         </nav>
 
