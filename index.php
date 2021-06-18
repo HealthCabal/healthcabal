@@ -152,7 +152,7 @@ if ($conn->affected_rows > 0) {
             <div>
                     <img src="' . $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_featured_img'] . '" class="homefeaturedimgs">
                 </div>
-                <div class="posttitle" style="padding:20px"><br>
+                <div class="posttitle mobile-related" style="padding:20px"><br>
                     <p>Test Category</p>
                     <h5 class="grow titletext mt-1">' . $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_title'] . '</h5>
 
