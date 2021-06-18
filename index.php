@@ -114,7 +114,7 @@ if ($conn->affected_rows > 0) {
             </div>
 
 
-            <div class="col-md ad-sidebar" style="padding-left:0px; padding-right:0px; width:300px">
+            <div class="col-md ad-sidebar" style="margin: 0 auto; width:300px">
             <!--Trying to navigate social interaction during a summer-->
 
                 <a href="https://wellxo.health" target="_blank"><img src="https://z-p3-scontent-los2-1.xx.fbcdn.net/v/t1.6435-9/187692988_3818908811541305_6910330521458322189_n.png?_nc_cat=109&ccb=1-3&_nc_sid=973b4a&_nc_ohc=eRlhDliJ108AX_iqcBB&_nc_ht=z-p3-scontent-los2-1.xx&oh=41cd2c85f28ac557ba78abd634871139&oe=60D12205"></a>
