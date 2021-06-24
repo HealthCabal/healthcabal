@@ -53,7 +53,7 @@ require_once("inc/mainheader.php");
     <h6 class="h6">' . $reviewBoard->user_fname . ' ' . $reviewBoard->user_lname . ', ' . $reviewBoard->user_prefix . '</h6>
     ' . $reviewBoard->primary_practice . '
     ' . substr($reviewBoard->user_about, 0, 90) . '. . .
-    <button class="mt-1 mb-5 btn btn-secondary" style="background-color: #00323D; height:50px; padding-left:20px; padding-right:20px">Read more</button>
+   <a href="review-board/'.$reviewBoard->user_url.'"> <button class="mt-1 mb-5 btn btn-secondary" style="background-color: #00323D; height:50px; padding-left:20px; padding-right:20px">Read more</button></a>
     </div>';
                     }
 

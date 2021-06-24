@@ -47,9 +47,10 @@
     <link rel="stylesheet" href="assets/css/signatra-font.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="favicon.html">
+    <link rel="icon" type="image/png" href="<?php echo $homeurl; ?>assets/images/hc-favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $homeurl; ?>assets/images/hc-favicon.png" />
     <!-- Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.html">
+    <link rel="apple-touch-icon" href="<?php echo $homeurl; ?>assets/images/hc-favicon.png">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/bootstrap.min.css">
