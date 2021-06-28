@@ -19,12 +19,9 @@ require_once("inc/mainheader.php");
 
 <div class="container">
     <div class="row">
-        <div class="col-md-2 mt-5">
-            <ul>
-                <li><strong><a href="about" class="active">About Us</a></strong></li>
-                <li><strong><a href="healthcabal-review-board">Review Board</a></strong></li>
-            </ul>
-        </div>
+        <?php
+        require_once('inc/left-sidebar.php');
+        ?>
 
         <div class="col-md-8 mt-5">
             <p>At healthcabal, we understand that you are on a journey to health

@@ -2,6 +2,7 @@ RewriteEngine On
  
 RewriteRule ^about?$ about.php
 RewriteRule ^review-board?$ review-board.php
+RewriteRule ^terms-of-use?$ terms-of-use.php
 RewriteRule ^healthcabal-review-board?$ healthcabal-review-board.php
 RewriteRule ^healthcabal-editorial-process?$ healthcabal-editorial-process.php
 RewriteRule ^review-board/([a-zA-Z-0-9-]+) review-board.php?slug=$1 

@@ -9,7 +9,7 @@
                                 <img src="<?php echo $homeurl; ?>assets/images/logo-light.png" alt="HealthCabal Logo">
                             </a>
                         </div>
-                        <p class="copyright-section">HealthCabal is owned and managed by WellXo Limited.</p>
+                        <p class="copyright-section">HealthCabal is a brand of WellXo.</p>
 
                         <!--h4 class="widget-title">Contact Info</h4>
                             <li> +234 816 8988</li>
@@ -20,20 +20,20 @@
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
                         <h4 class="widget-title">Hot Topics</h4>
-                        <ul class="xs-list">
-                            <li><a href="#!">Heart Attack</a></li>
-                            <li><a href="#!">Diabetes</a></li>
-                            <li><a href="#!">Stroke</a></li>
-                            <li><a href="#!">High Blood Pressure</a></li>
+                        <ul class="sm-list">
+                            <li><a href="#!" class="text-white">Heart Attack</a></li>
+                            <li><a href="#!" class="text-white">Diabetes</a></li>
+                            <li><a href="#!" class="text-white">Stroke</a></li>
+                            <li><a href="#!" class="text-white">High Blood Pressure</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
                         <h4 class="widget-title">About</h4>
-                        <ul class="xs-list">
-                            <li><a href="about">Healthcabal</a></li>
-                            <li><a href="https://blog.healthcabal.com">Company Blog</a></li>
+                        <ul class="sm-list">
+                            <li><a href="about" class="text-white">Healthcabal</a></li>
+                            <li><a href="#" class="text-white">Company Blog</a></li>
                             <!--li><a href="contact.html">Contact Us</a></li>
                             <li><a href="cases.html">Case</a></li>
                             <li><a href="shop.html">Shop</a></li>
@@ -45,20 +45,19 @@
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
                         <h4 class="widget-title">Editorial</h4>
-                        <ul class="xs-list">
-                            <li><a href="healthcabal-editorial-process">Our Editorial Process</a></li>
-                            <li><a href="healthcabal-review-board">Our Review Board</a></li>
+                        <ul class="sm-list text-white">
+                            <li><a href="healthcabal-editorial-process" class="text-white">Our Editorial Process</a></li>
+                            <li><a href="healthcabal-review-board" class="text-white">Our Review Board</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
                         <h4 class="widget-title">Legal</h4>
-                        <ul class="xs-list">
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Cookie Policiy</a></li>
-                            <li><a href="#">Copyright</a></li>
+                        <ul class="sm-list">
+                            <li><a href="terms-of-use" class="text-white">Terms of Use</a></li>
+                            <li><a href="terms-of-use#privacypolicy" class="text-white">Privacy Policy</a></li>
+                            <li><a href="terms-of-use#cookies" class="text-white">Cookie Policiy</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
@@ -66,12 +65,22 @@
                 <div class="col-md-6 col-lg-2">
                     <div class="footer-widget">
                         <h4 class="widget-title">Follow Us</h4>
-                        <ul class="xs-list">
-                            <li><a href="https://facebook.com/healthcabal">Facebook</a></li>
-                            <li><a href="https://twitter.com/healthcabal">Twitter</a></li>
+                        <ul class="sm-list">
+                            <li><a href="https://facebook.com/healthcabal" target="_blank" class="text-white">Facebook</a></li>
+                            <li><a href="https://twitter.com/healthcabal" target="_blank" class="text-white">Twitter</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
+                <br>
+                <div class="col-lg-6">
+
+                </div>
+                
+                <p class="text-white">
+                    The content of this site is for informational purposes only.
+                    The content is not intended to be a substitute for a medical advice, diagnosis, or treatment.
+                    Though they are provided by qualified professionals, it is your final decision to decide to rely on them.
+                </p>
 
             </div><!-- .row END -->
         </div><!-- .container END -->
@@ -81,7 +90,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="copyright-section">
-                        <p>Copyright <?php echo date('Y') ?>, <a href="https://wellxo.health">WellXo Ltd.</a>
+                        <p>Copyright <?php echo date('Y') ?>, <a href="https://wellxo.health">WellXo.</a>
                             All Rights Reserved.</p>
                     </div><!-- .copyright-section END -->
                 </div>

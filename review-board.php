@@ -1,9 +1,5 @@
 <?php
-$title = "HealthCabal - About Us";
 require_once("classes/config.php");
-require_once("inc/mainheader.php");
-?>
-<?php
 if (isset($_REQUEST['slug'])) {
     $slug = $_REQUEST['slug'];
     $fetchMember = "SELECT * FROM hc_users WHERE user_type = 'reviewer' AND user_url = '$slug'";
@@ -11,6 +7,12 @@ if (isset($_REQUEST['slug'])) {
     $result = $conn->query($fetchMember);
     $results = $result->fetch_assoc();
 }
+
+$title = "HealthCabal - " . $results['user_fname'] . " " . $results['user_lname'] . ", ". $results['user_fname'] ;
+require_once("inc/mainheader.php");
+?>
+<?php
+
 ?>
 
 
@@ -29,7 +31,7 @@ if (isset($_REQUEST['slug'])) {
     }
 
     #hero {
-        background-color: #BAF8FF;
+        background-color: #00323d;
         padding-bottom: 20px;
     }
 </style>
@@ -43,11 +45,11 @@ if (isset($_REQUEST['slug'])) {
             </div>
 
             <div class="col-md-7 mt-5">
-                <h1 class="doctor-header"><?php echo $results['user_fname'] . " " . $results['user_lname']. ", ".$results['user_prefix'] ?></h1>
-                <h4 class="doctor-info">
-                    <a href="../healthcabal-review-board"> HealthCabal Medical Review Board Member</a>
+                <h1 class="doctor-header" style="color:white"><?php echo $results['user_fname'] . " " . $results['user_lname']?> <?php if(!empty($results['user_prefix'])) {echo ", " . $results['user_prefix']; }?></h1>
+                <h4 class="doctor-info" style="color:white">
+                    <a href="../healthcabal-review-board" style="color:white"> HealthCabal Medical Review Board Member</a>
                     <h4>
-                    <h4><?php echo $results['primary_practice'] ?></h4>
+                        <h4 style="color:white"><?php echo $results['primary_practice'] ?></h4>
             </div>
         </div>
     </div>
@@ -64,7 +66,7 @@ if (isset($_REQUEST['slug'])) {
         </div>
 
         <div class="col-md-7 mt-5">
-        <?php echo $results['user_about']; ?>
+            <?php echo $results['user_about']; ?>
         </div>
 
         <div class="col-md-2">

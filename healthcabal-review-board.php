@@ -1,5 +1,5 @@
 <?php
-$title = "HealthCabal - About Us";
+$title = "HealthCabal - Medical Review Board";
 require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>
@@ -19,12 +19,9 @@ require_once("inc/mainheader.php");
 
 <div class="container">
     <div class="row">
-        <div class="col-md-2 mt-5">
-            <ul>
-                <li><strong><a href="about">About Us</a></strong></li>
-                <li><strong><a href="healthcabal-review-board" class="active">Review Board</a></strong></li>
-            </ul>
-        </div>
+        <?php
+        require_once('inc/left-sidebar.php');
+        ?>
 
         <div class="col-md-8 mt-5">
             <p>Your journey to health and wellness is one on which we have gladly joined you.
@@ -53,7 +50,7 @@ require_once("inc/mainheader.php");
     <h6 class="h6">' . $reviewBoard->user_fname . ' ' . $reviewBoard->user_lname . ', ' . $reviewBoard->user_prefix . '</h6>
     ' . $reviewBoard->primary_practice . '
     ' . substr($reviewBoard->user_about, 0, 90) . '. . .
-   <a href="review-board/'.$reviewBoard->user_url.'"> <button class="mt-1 mb-5 btn btn-secondary" style="background-color: #00323D; height:50px; padding-left:20px; padding-right:20px">Read more</button></a>
+   <a href="review-board/' . $reviewBoard->user_url . '"> <button class="mt-1 mb-5 btn btn-secondary" style="background-color: #00323D; height:50px; padding-left:20px; padding-right:20px">Read more</button></a>
     </div>';
                     }
 

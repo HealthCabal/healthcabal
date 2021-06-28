@@ -5,7 +5,7 @@ require_once('classes/posts.php');
 
 if (isset($_REQUEST['post_slug'])) {
     $postSlug = $_GET['post_slug'];
-    $fetchPost = "SELECT * FROM  hc_posts, hc_users WHERE post_slug = '$postSlug'";
+    $fetchPost = "SELECT * FROM  hc_posts WHERE post_slug = '$postSlug'";
     //die($fetchPost);
     $result = $conn->query($fetchPost);
 }
@@ -20,9 +20,9 @@ if ($conn->affected_rows > 0) {
                 <div class="col-md-2"></div>
                 <div class="col-md">
                     <br>
-                    <img src="https://tpc.googlesyndication.com/simgad/4917489439033249397">
+                    <!--img src="https://tpc.googlesyndication.com/simgad/4917489439033249397"-->
                 </div>
-                <div class="col-md-3"></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
@@ -35,7 +35,18 @@ if ($conn->affected_rows > 0) {
                 ?>
             </div>
             <div style="display: inline-block; margin-top:30px; margin-bottom: 30px">
-                <p>By <?php echo $postData['user_fname'] . " " . $postData['user_lname']; ?></p>
+                <p> <?php
+
+                    if ($postData['post_author'] == 0) {
+                        echo "Reviewed by <strong>" . $postData['fact_checked_by'] . "</strong>";
+                    } else {
+                        $author = $postData['post_author'];
+                        $author_id = $conn->query('SELECT * FROM hc_users WHERE ID = ' . $author);
+                        $authorName = $author_id->fetch_assoc();
+                        echo "<strong>Written by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . "</strong>";
+                    }
+
+                    ?>
             </div>
         </div>
     </div>
@@ -51,7 +62,8 @@ if ($conn->affected_rows > 0) {
                     <div class="col-sm-3" style="padding-top:30px">
                         <!--img src="https://www.verywellhealth.com/thmb/TvztNApqnUbUzxZR4S_-Lvz6ngI=/220x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/news-illo-health-92feca2e52e44c5488b8349e22518212.png" alt="" class="img-responsive"-->
                         <?php
-                        if ($postData['post_series'] !== "" && $postData['post_series'] !== NULL && $postData['post_series'] !== 0) {
+                        $series = array("", "NULL", NULL, 0);
+                        if (!in_array($postData['post_series'], $series)) {
                             $series = $postData['post_series'];
                             $query = "SELECT post_series_heading, post_slug FROM hc_posts WHERE post_series = $series ORDER BY series_priority ASC";
                             //die($query);
@@ -172,58 +184,6 @@ if ($conn->affected_rows > 0) {
 
 
 
-            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
-                <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
-                    <div>
-                        <img src="https://www.verywellhealth.com/thmb/mLqwUFQZW3FU1ai3PrPjb6bD7Mk=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1224954339-4976e5286dab4e139527778068377fc1.jpg" class="homefeaturedimgs">
-                    </div>
-                    <div class="posttitle" style="padding:20px"><br>
-                        <p>Test Category</p>
-                        <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
-                <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
-                    <div>
-                        <img src="https://www.verywellhealth.com/thmb/mLqwUFQZW3FU1ai3PrPjb6bD7Mk=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1224954339-4976e5286dab4e139527778068377fc1.jpg" class="homefeaturedimgs">
-                    </div>
-                    <div class="posttitle" style="padding:20px"><br>
-                        <p>Test Category</p>
-                        <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
-                <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
-                    <div>
-                        <img src="https://www.verywellhealth.com/thmb/mLqwUFQZW3FU1ai3PrPjb6bD7Mk=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1224954339-4976e5286dab4e139527778068377fc1.jpg" class="homefeaturedimgs">
-                    </div>
-                    <div class="posttitle" style="padding:20px"><br>
-                        <p>Test Category</p>
-                        <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row col-md-3 col-sm-12" style="padding-right:20px">
-                <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
-                    <div>
-                        <img src="https://www.verywellhealth.com/thmb/mLqwUFQZW3FU1ai3PrPjb6bD7Mk=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1224954339-4976e5286dab4e139527778068377fc1.jpg" class="homefeaturedimgs">
-                    </div>
-                    <div class="posttitle" style="padding:20px"><br>
-                        <p>Test Category</p>
-                        <h5 class="grow titletext mt-1">All you need to know about ventilators and how they work - lorem ipsum dolor sit amet</h5>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
         </div>
     </div>
 
@@ -307,7 +267,7 @@ if ($conn->affected_rows > 0) {
                     <div style="height: 40px">
                     </div>
                     <?php
-                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 0, 1";
+                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 2, 1";
                     $fetchRight = $conn->query($query);
                     while ($topRight = $fetchRight->fetch_assoc()) {
                         echo ' <div class="homefeaturedimgs">
@@ -496,7 +456,7 @@ if ($conn->affected_rows > 0) {
     </div>
     <div class="container" id="ourpromise">
 
-        <h5 class="titletext text-center" style="color: white; padding-top: 30px">THE HEALTHCABAL PROMISE</h5>
+        <h5 class="titletext text-center" style="color: white; padding-top: 20px">THE HEALTHCABAL PROMISE</h5>
         <p class="text-center white" style="color: white; padding-top: 30px">
             Our processes are optimized to ensure information of the highest quality.
         </p>

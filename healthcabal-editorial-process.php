@@ -19,13 +19,9 @@ require_once("inc/mainheader.php");
 
 <div class="container">
     <div class="row">
-        <div class="col-md-2 mt-5">
-            <ul>
-                <li><strong><a href="about">About Us</a></strong></li>
-                <li><strong><a href="healthcabal-review-board" class="active">Review Board</a></strong></li>
-                <li><strong><a href="healthcabal-editorial-process" class="active">Editorial Process</a></strong></li>
-            </ul>
-        </div>
+        <?php
+        require_once('inc/left-sidebar.php');
+        ?>
 
         <div class="col-md-8 mt-5">
             <p>With billions of web pages offering information on any topic imaginable, a simple online
@@ -109,9 +105,9 @@ require_once("inc/mainheader.php");
                 </p>
 
                 <h4>Feedback</h4>
-                <p>We love to hear from you. If you have a comment or suggestion to share, feel free to contact us 
-                at editorial[at]healthcabal.com.
-</p>
+                <p>We love to hear from you. If you have a comment or suggestion to share, feel free to contact us
+                    at editorial[at]healthcabal.com.
+                </p>
 
         </div>
 
