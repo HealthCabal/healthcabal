@@ -38,12 +38,19 @@ if ($conn->affected_rows > 0) {
                 <p> <?php
 
                     if ($postData['post_author'] == 0) {
-                        echo "Reviewed by <strong>" . $postData['fact_checked_by'] . "</strong>";
+                        echo "Medically reviewed by <strong>" . $postData['fact_checked_by'] . "</strong><br>";
+                        $publishedDate = Carbon::parse($postData['post_date']);
+                        $publishedDate = strtotime($postData['post_date']);
+                        echo date('F j, Y', $publishedDate);
+                        //echo $postData['post_date'];
                     } else {
                         $author = $postData['post_author'];
                         $author_id = $conn->query('SELECT * FROM hc_users WHERE ID = ' . $author);
                         $authorName = $author_id->fetch_assoc();
-                        echo "<strong>Written by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . "</strong>";
+                        echo "<strong>Written by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . "</strong><br>";
+                        
+                        $publishedDate = strtotime($postData['post_date']);
+                        echo date('F j, Y', $publishedDate);
                     }
 
                     ?>
@@ -93,8 +100,8 @@ if ($conn->affected_rows > 0) {
                                     color: #00323d;
                                     padding-top: 30px;
                                     padding-bottom: 50px;
-                                    padding-right: 30px;
-                                    padding-left: 100px;
+                                    /* padding-right: 30px;
+                                    padding-left: 100px; */
                                 }
 
                                 /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
@@ -105,14 +112,14 @@ if ($conn->affected_rows > 0) {
                                 <p>Subscribe to our newsletter.
                                 <h5>Get a weekly roundup of our top articles and stay informed about the latest and best practices to keep you healthy and strong.</h5>
                                 <form action="https://healthcabal.us1.list-manage.com/subscribe/post?u=b3c0b9b27da524abe9acfd0df&amp;id=6749df06cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                    <div id="mc_embed_signup_scroll">
+                                    <div id="mc_embed_signup_scroll" style="width: 100%;">
                                         <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
                                         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3c0b9b27da524abe9acfd0df_6749df06cb" tabindex="-1" value=""></div>
                                         <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #00323d;"></div>
                                     </div>
                                 </form>
-                                <strong>Follow us on <a href="https://twitter.com/healthcabal" target="_blank">Twitter</a> and <a href="https://facebook.com/healthcabal" target="_blank"> Facebook</a>.</strong>
+                                <strong class="center">Follow us on <a href="https://twitter.com/healthcabal" target="_blank">Twitter</a> and <a href="https://facebook.com/healthcabal" target="_blank"> Facebook</a>.</strong>
 
                             </div>
 

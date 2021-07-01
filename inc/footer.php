@@ -112,13 +112,13 @@
 
 <!-- js file start -->
 <script src="assets/js/jquery-3.2.1.min.js"></script>
-<script src="assets/js/plugins.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- <script src="assets/js/plugins.js"></script>
 <script src="assets/js/Popper.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.magnific-popup.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/scrollax.js"></script>
-<script src="assets/js/jquery.ajaxchimp.min.js"></script>
 <script src="assets/js/jquery.waypoints.min.js"></script>
 <script src="assets/js/isotope.pkgd.min.js"></script>
 <script src="assets/js/swiper.min.js"></script>
@@ -136,6 +136,6 @@
 <script src="assets/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="assets/js/extensions/revolution.extension.video.min.js"></script>
 <script src="assets/js/skrollr.min.js"></script>
-<script src="assets/js/main.js"></script> <!-- End js file -->
+<script src="assets/js/main.js"></script> End js file -->
 
 </body>

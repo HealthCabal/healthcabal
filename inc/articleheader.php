@@ -54,19 +54,19 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/iconfont.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/rev-settings.css">
+    <link rel="stylesheet" href="assets/css/rev-settings.css"> -->
 
     <!--For Plugins external css-->
     <link rel="stylesheet" href="assets/css/plugins.css" />
 
     <!--Theme custom css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 
     <!--Theme Responsive css-->
     <link rel="stylesheet" href="assets/css/responsive.css" />

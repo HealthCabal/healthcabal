@@ -5,7 +5,7 @@ require_once("inc/mainheader.php");
 ?>
 
 
-<div class="" style="background-color: #00323D; height: 300px">
+<div class="staic-hero" style="background-color: #00323D;">
     <div class="container">
         <div class="row">
             <div class="col-md-10 mx-auto">

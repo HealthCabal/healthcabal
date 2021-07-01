@@ -29,7 +29,7 @@
     <meta name="description" content="HealthCabal is Africa's leading destination for unbiased medical news and information,
      providing clear and credible health news and expert advice.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" type="text/css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" type="text/css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CRoboto:400,500,700,900%7CPlayfair+Display:400,700,700i,900,900i%7CWork+Sans:400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Coustard&display=swap" rel="stylesheet">
     <!-- signatra-font -->
@@ -42,13 +42,13 @@
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/animate.css">
+    <!-- <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/animate.css">
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/iconfont.css">
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/magnific-popup.css">
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/swiper.min.css">
-    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/rev-settings.css">
+    <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/rev-settings.css"> -->
 
     <!--For Plugins external css-->
     <link rel="stylesheet" href="<?php echo $homeurl; ?>assets/css/plugins.css" />
@@ -112,6 +112,10 @@
 
         .h6 {
             color: #00323D
+        }
+
+        .static-hero {
+            min-height: 300px;
         }
 
         #ourpromise {
@@ -295,6 +299,12 @@
         }
 
         @media (max-width: 991.98px) {
+
+            .static-hero {
+            height: auto;
+            margin-top:50px;
+            background-color: #00323D;
+        }
             .featured-conditions {
                 height: 150px;
                 text-align: center;

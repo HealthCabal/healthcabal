@@ -1,5 +1,5 @@
 <?php
-$title = "HealthCabal - About Us";
+$title = "HealthCabal - Terms of Use";
 require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>
