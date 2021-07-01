@@ -4,7 +4,6 @@ require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>
 
-
 <div class="staic-hero" style="background-color: #00323D;">
     <div class="container">
         <div class="row">
