@@ -39,7 +39,6 @@ if ($conn->affected_rows > 0) {
 
                     if ($postData['post_author'] == 0) {
                         echo "Medically reviewed by <strong>" . $postData['fact_checked_by'] . "</strong><br>";
-                        $publishedDate = Carbon::parse($postData['post_date']);
                         $publishedDate = strtotime($postData['post_date']);
                         echo date('F j, Y', $publishedDate);
                         //echo $postData['post_date'];
