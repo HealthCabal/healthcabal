@@ -4,7 +4,6 @@ require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>
 
-
 <div class="" style="background-color: #00323D; height: 300px">
     <div class="container">
         <div class="row">
