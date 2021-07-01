@@ -1,3 +1,5 @@
+<!-- Sidebar for static pages -->
+
 <div class="col-md-2 mt-5">
     <ul>
         <li><strong><a href="about">About Us</a></strong></li>
