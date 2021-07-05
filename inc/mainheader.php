@@ -110,6 +110,14 @@
             color: darkslategrey
         }
 
+        .author-badge {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            border: 1px solid red; 
+        }
+
         .h6 {
             color: #00323D
         }
@@ -228,7 +236,7 @@
 
 
         .top-right-col {
-            height: 15 0px;
+            height: 150px;
             border-bottom-right-radius: 20px;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
@@ -299,6 +307,34 @@
         }
 
         @media (max-width: 991.98px) {
+
+            #homefeatured {
+                margin: 10px;
+                border-radius: 20px 20px 20px 0px;
+                padding-right: 0px;
+                background-color: white;
+                overflow: hidden;
+                height: auto;
+            }
+
+
+            .author-badge {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 90px;
+                margin-top: 20px;
+                /* border: 1px solid red; */
+            }
+
+            .top-right-col {
+                height: auto;
+                border-bottom-right-radius: 20px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                margin-top: 10px;
+                margin-left: 5px;
+            }
 
             .static-hero {
                 height: auto;

@@ -249,10 +249,7 @@
                         <!--h6 class="headsub">CANCERS</h6--->
 
                         <h4 class="grow titletext"><?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_title"); ?></h4>
-                        <div style="position: absolute; 
-                bottom: 0; 
-                width: 100%; 
-                height: 50px; "> <?php
+                        <p> <?php
 
                                     $query = "SELECT * FROM hc_posts WHERE post_home_hero = 1";
                                     $result = $conn->query($query);
@@ -273,7 +270,7 @@
                                     }
 
                                     ?>
-                        </div>
+                        </p>
                     </div>
                 </a>
 

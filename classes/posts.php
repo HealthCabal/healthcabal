@@ -68,14 +68,10 @@ class Posts extends Crud
                 <div style="height:auto" class="posttitle"><br>
                     <p>' . $featuredPosts['cat_name'] . '</p>
                     <a href="' . $homeurl . $featuredPosts['post_slug'] . '">
-                    <h5 class="grow titletext mt-1"> ' . substr($featuredPosts['post_title'], 0, 60) . ' . . .</h5></a>' .
-                '<div style="position: absolute; 
-                bottom: 0; 
-                width: 100%; 
-                height: 50px; 
-                //border: 1px solid red;">' .
+                    <h5 class="grow titletext mt-1"> ' . substr($featuredPosts['post_title'], 0, 40) . ' . . .</h5></a>' .
+                '<p>' .
                 $review_or_author . '
-                     </div>
+                     </p>
                 </div>
             </div>
 
