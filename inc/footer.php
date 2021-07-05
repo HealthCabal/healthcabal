@@ -21,10 +21,10 @@
                     <div class="footer-widget">
                         <h4 class="widget-title">Hot Topics</h4>
                         <ul class="sm-list">
-                            <li><a href="#!" class="text-white">Heart Attack</a></li>
-                            <li><a href="#!" class="text-white">Diabetes</a></li>
-                            <li><a href="#!" class="text-white">Stroke</a></li>
-                            <li><a href="#!" class="text-white">High Blood Pressure</a></li>
+                            <li class="footer-list"><a href="#!" class="text-white">Heart Attack</a></li>
+                            <li class="footer-list"><a href="#!" class="text-white">Diabetes</a></li>
+                            <li class="footer-list"><a href="#!" class="text-white">Stroke</a></li>
+                            <li class="footer-list"><a href="#!" class="text-white">High Blood Pressure</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
@@ -32,8 +32,8 @@
                     <div class="footer-widget">
                         <h4 class="widget-title">About</h4>
                         <ul class="sm-list">
-                            <li><a href="about" class="text-white">Healthcabal</a></li>
-                            <li><a href="#" class="text-white">Company Blog</a></li>
+                            <li class="footer-list"><a href="about" class="text-white">Healthcabal</a></li>
+                            <li class="footer-list"><a href="#" class="text-white">Company Blog</a></li>
                             <!--li><a href="contact.html">Contact Us</a></li>
                             <li><a href="cases.html">Case</a></li>
                             <li><a href="shop.html">Shop</a></li>
@@ -46,8 +46,8 @@
                     <div class="footer-widget">
                         <h4 class="widget-title">Editorial</h4>
                         <ul class="sm-list text-white">
-                            <li><a href="healthcabal-editorial-process" class="text-white">Our Editorial Process</a></li>
-                            <li><a href="healthcabal-review-board" class="text-white">Our Review Board</a></li>
+                            <li class="footer-list"><a href="healthcabal-editorial-process" class="text-white">Our Editorial Process</a></li>
+                            <li class="footer-list"><a href="healthcabal-review-board" class="text-white">Our Review Board</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
@@ -55,9 +55,9 @@
                     <div class="footer-widget">
                         <h4 class="widget-title">Legal</h4>
                         <ul class="sm-list">
-                            <li><a href="terms-of-use" class="text-white">Terms of Use</a></li>
-                            <li><a href="terms-of-use#privacypolicy" class="text-white">Privacy Policy</a></li>
-                            <li><a href="terms-of-use#cookies" class="text-white">Cookie Policiy</a></li>
+                            <li class="footer-list"><a href="terms-of-use" class="text-white">Terms of Use</a></li>
+                            <li class="footer-list"><a href="terms-of-use#privacypolicy" class="text-white">Privacy Policy</a></li>
+                            <li class="footer-list"><a href="terms-of-use#cookies" class="text-white">Cookie Policiy</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>
@@ -66,8 +66,8 @@
                     <div class="footer-widget">
                         <h4 class="widget-title">Follow Us</h4>
                         <ul class="sm-list">
-                            <li><a href="https://facebook.com/healthcabal" target="_blank" class="text-white">Facebook</a></li>
-                            <li><a href="https://twitter.com/healthcabal" target="_blank" class="text-white">Twitter</a></li>
+                            <li class="footer-list"><a href="https://facebook.com/healthcabal" target="_blank" class="text-white">Facebook</a></li>
+                            <li class="footer-list"><a href="https://twitter.com/healthcabal" target="_blank" class="text-white">Twitter</a></li>
                         </ul><!-- .xs-list END -->
                     </div><!-- .footer-widget END -->
                 </div>

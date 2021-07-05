@@ -21,7 +21,7 @@ class Posts extends Crud
         $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT $start, $end";
         $result  = $conn->query($query);
         while ($featuredPostVertical = $result->fetch_assoc()) {
-            echo '<a href="'.$featuredPostVertical['post_slug'].'"><h6 class="grow titletext mt-1">' . $featuredPostVertical['post_title'] . '</h6></a>';
+            echo '<a href="' . $featuredPostVertical['post_slug'] . '"><h6 class="grow titletext mt-1">' . $featuredPostVertical['post_title'] . '</h6></a>';
         }
     }
 
@@ -44,18 +44,38 @@ class Posts extends Crud
 
     function fetchFeaturedPosts($conn, $start, $end, $homeurl)
     {
-        $query = "SELECT hc_posts.ID, hc_posts.post_featured_img, hc_posts.post_category, hc_posts.post_title, hc_posts.post_slug, hc_categories.cat_name, hc_categories.ID FROM hc_posts, hc_categories WHERE hc_categories.ID = hc_posts.post_category AND hc_posts.post_home_featured = 1 ORDER BY hc_posts.ID DESC LIMIT $start, $end";
+        $query = "SELECT hc_posts.ID, hc_posts.post_featured_img, hc_posts.post_category, hc_posts.post_title, hc_posts.post_slug, hc_categories.cat_name, hc_categories.ID, hc_posts.post_author, hc_posts.fact_checked_by FROM hc_posts, hc_categories WHERE hc_categories.ID = hc_posts.post_category AND hc_posts.post_home_featured = 1 ORDER BY hc_posts.ID DESC LIMIT $start, $end";
         //die($query);
         $result  = $conn->query($query);
         while ($featuredPosts = $result->fetch_assoc()) {
+
+
+
+            if ($featuredPosts['post_author'] == 0) {
+                $review_or_author = "Written by " . $featuredPosts['fact_checked_by'];
+            } else {
+                $author = $featuredPosts['post_author'];
+                $author_id = $conn->query('SELECT * FROM hc_users WHERE ID = ' . $author);
+                $authorName = $author_id->fetch_assoc();
+                //echo "<strong>Written by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . "</strong><br>";
+
+                $review_or_author = "Medically reviewed by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . ", MD";
+            }
             echo '
             <div class="row col-md col-sm-12">
             <div class="col-md top-right-col  shadow-right second-row-home">
-            <img src="'.$featuredPosts['post_featured_img'].'" alt="'.$featuredPosts['post_title'].'">
+            <img src="' . $featuredPosts['post_featured_img'] . '" alt="' . $featuredPosts['post_title'] . '">
                 <div style="height:auto" class="posttitle"><br>
                     <p>' . $featuredPosts['cat_name'] . '</p>
-                    <a href="'.$homeurl.$featuredPosts['post_slug'].'">
-                    <h5 class="grow titletext mt-1"> '. $featuredPosts['post_title'] . '</h5></a>
+                    <a href="' . $homeurl . $featuredPosts['post_slug'] . '">
+                    <h5 class="grow titletext mt-1"> ' . substr($featuredPosts['post_title'], 0, 60) . ' . . .</h5></a>' .
+                '<div style="position: absolute; 
+                bottom: 0; 
+                width: 100%; 
+                height: 50px; 
+                //border: 1px solid red;">' .
+                $review_or_author . '
+                     </div>
                 </div>
             </div>
 

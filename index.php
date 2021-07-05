@@ -1,212 +1,209 @@
-<?php
+`<?php
 
-require_once("classes/config.php");
-require_once('classes/posts.php');
+    require_once("classes/config.php");
+    require_once('classes/posts.php');
 
-if (isset($_REQUEST['post_slug'])) {
-    $postSlug = $_GET['post_slug'];
-    $fetchPost = "SELECT * FROM  hc_posts WHERE post_slug = '$postSlug'";
-    //die($fetchPost);
-    $result = $conn->query($fetchPost);
-}
-if ($conn->affected_rows > 0) {
-    $postData = $result->fetch_array();
-    require_once("inc/articleheader.php");
-    require_once("classes/posts.php");
-?>
-    <div class="col-lg-12" id="topbar" style="background-color:mintcream; padding-top:0px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md">
-                    <br>
-                    <!--img src="https://tpc.googlesyndication.com/simgad/4917489439033249397"-->
-                </div>
-                <div class="col-md-2"></div>
+    if (isset($_REQUEST['post_slug'])) {
+        $postSlug = $_GET['post_slug'];
+        $fetchPost = "SELECT * FROM  hc_posts WHERE post_slug = '$postSlug'";
+        //die($fetchPost);
+        $result = $conn->query($fetchPost);
+    }
+    if ($conn->affected_rows > 0) {
+        $postData = $result->fetch_array();
+        require_once("inc/articleheader.php");
+        require_once("classes/posts.php");
+    ?>
+<div class="col-lg-12" id="topbar" style="background-color:mintcream; padding-top:0px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md">
+                <br>
+                <!--img src="https://tpc.googlesyndication.com/simgad/4917489439033249397"-->
             </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
+</div>
 
-    <div class="col-lg-12" id="topbar" style="background-color: white;">
-        <div class="container">
-            <div class="row">
-                <?php
-                echo "<p class='h1 text-dark articleheader'>" . $postData['post_title'] . "</p>";
+<div class="col-lg-12" id="topbar" style="background-color: white;">
+    <div class="container">
+        <div class="row">
+            <?php
+            echo "<p class='h1 text-dark articleheader'>" . $postData['post_title'] . "</p>";
+            ?>
+        </div>
+        <div style="display: inline-block; margin-top:30px; margin-bottom: 30px">
+            <p> <?php
+
+                if ($postData['post_author'] == 0) {
+                    echo "Medically reviewed by <strong>" . $postData['fact_checked_by'] . "</strong><br>";
+                    $publishedDate = strtotime($postData['post_date']);
+                    echo date('F j, Y', $publishedDate);
+                    //echo $postData['post_date'];
+                } else {
+                    $author = $postData['post_author'];
+                    $author_id = $conn->query('SELECT * FROM hc_users WHERE ID = ' . $author);
+                    $authorName = $author_id->fetch_assoc();
+                    echo "<strong>Written by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . "</strong><br>";
+
+                    $publishedDate = strtotime($postData['post_date']);
+                    echo date('F j, Y', $publishedDate);
+                }
+
                 ?>
-            </div>
-            <div style="display: inline-block; margin-top:30px; margin-bottom: 30px">
-                <p> <?php
+        </div>
+    </div>
+</div>
 
-                    if ($postData['post_author'] == 0) {
-                        echo "Medically reviewed by <strong>" . $postData['fact_checked_by'] . "</strong><br>";
-                        $publishedDate = strtotime($postData['post_date']);
-                        echo date('F j, Y', $publishedDate);
-                        //echo $postData['post_date'];
-                    } else {
-                        $author = $postData['post_author'];
-                        $author_id = $conn->query('SELECT * FROM hc_users WHERE ID = ' . $author);
-                        $authorName = $author_id->fetch_assoc();
-                        echo "<strong>Written by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . "</strong><br>";
-                        
-                        $publishedDate = strtotime($postData['post_date']);
-                        echo date('F j, Y', $publishedDate);
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <img class="img-fluid fit-image" src="<?php echo $postData['post_featured_img']; ?>" alt="<?php echo $postData['post_title']; ?>">
+
+
+            <div class="row">
+                <div class="col-sm-3" style="padding-top:30px">
+                    <!--img src=""-->
+                    <?php
+                    $series = array("", "NULL", NULL, 0);
+                    if (!in_array($postData['post_series'], $series)) {
+                        $series = $postData['post_series'];
+                        $query = "SELECT post_series_heading, post_slug FROM hc_posts WHERE post_series = $series ORDER BY series_priority ASC";
+                        //die($query);
+                        $fetchHeadings = $conn->query($query);
+                        while ($seriesHeadings = $fetchHeadings->fetch_assoc()) {
+                            $curURL_s =  "https://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+                            $curURL =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+                            if ($curURL_s == $homeurl . $seriesHeadings['post_slug'] || $curURL ==  $homeurl . $seriesHeadings['post_slug']) {
+                                $activeClass = "active-class";
+                            } else {
+                                $activeClass = "";
+                            }
+
+                            echo '<a href="' . $homeurl . $seriesHeadings['post_slug'] . '"><button class="btn btn-sm series-buttons ' . $activeClass . '">' . $seriesHeadings['post_series_heading'] . '</button></a><br>';
+                        }
                     }
 
                     ?>
-            </div>
-        </div>
-    </div>
+                </div>
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9">
-                <img class="img-fluid fit-image" src="<?php echo $postData['post_featured_img']; ?>" alt="<?php echo $postData['post_title']; ?>">
-
-
-                <div class="row">
-                    <div class="col-sm-3" style="padding-top:30px">
-                        <!--img src="https://www.verywellhealth.com/thmb/TvztNApqnUbUzxZR4S_-Lvz6ngI=/220x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/news-illo-health-92feca2e52e44c5488b8349e22518212.png" alt="" class="img-responsive"-->
-                        <?php
-                        $series = array("", "NULL", NULL, 0);
-                        if (!in_array($postData['post_series'], $series)) {
-                            $series = $postData['post_series'];
-                            $query = "SELECT post_series_heading, post_slug FROM hc_posts WHERE post_series = $series ORDER BY series_priority ASC";
-                            //die($query);
-                            $fetchHeadings = $conn->query($query);
-                            while ($seriesHeadings = $fetchHeadings->fetch_assoc()) {
-                                echo "<li style='border-bottom:1px dotted black'><a href='" . $homeurl . $seriesHeadings['post_slug'] . "'>" . $seriesHeadings['post_series_heading'] . "</a></li>";
-                            }
-                        }
-                        ?>
-                    </div>
-
-                    <div class="col-sm" style="padding-top:30px">
-                        <?php echo $postData['post_content']; ?>
+                <div class="col-sm" style="padding-top:30px">
+                    <?php echo $postData['post_content']; ?>
 
 
 
-                        <!--Mailchimp starts here-->
-                        <div class="container" style="background-color: #05e4c0; border-radius: 0px 20px 0px 20px; margin-top: 50px; margin-bottom:20">
-                            <!-- Begin Mailchimp Signup Form -->
-                            <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-                            <style type="text/css">
-                                #mc_embed_signup {
-                                    background: transparent;
-                                    clear: left;
-                                    font: 14px Helvetica, Arial, sans-serif;
-                                    width: 100%;
-                                    color: #00323d;
-                                    padding-top: 30px;
-                                    padding-bottom: 50px;
-                                    /* padding-right: 30px;
+                    <!--Mailchimp starts here-->
+                    <div class="container" style="background-color: #05e4c0; border-radius: 0px 20px 0px 20px; margin-top: 50px; margin-bottom:20">
+                        <!-- Begin Mailchimp Signup Form -->
+                        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                        <style type="text/css">
+                            #mc_embed_signup {
+                                background: transparent;
+                                clear: left;
+                                font: 14px Helvetica, Arial, sans-serif;
+                                width: 100%;
+                                color: #00323d;
+                                padding-top: 30px;
+                                padding-bottom: 50px;
+                                /* padding-right: 30px;
                                     padding-left: 100px; */
-                                }
+                            }
 
-                                /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                            </style>
-                            <div id="mc_embed_signup">
-                                <h2>Stay Updated!</h2>
-                                <p>Subscribe to our newsletter.
-                                <h5>Get a weekly roundup of our top articles and stay informed about the latest and best practices to keep you healthy and strong.</h5>
-                                <form action="https://healthcabal.us1.list-manage.com/subscribe/post?u=b3c0b9b27da524abe9acfd0df&amp;id=6749df06cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                    <div id="mc_embed_signup_scroll" style="width: 100%;">
-                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3c0b9b27da524abe9acfd0df_6749df06cb" tabindex="-1" value=""></div>
-                                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #00323d;"></div>
-                                    </div>
-                                </form>
-                                <strong class="center">Follow us on <a href="https://twitter.com/healthcabal" target="_blank">Twitter</a> and <a href="https://facebook.com/healthcabal" target="_blank"> Facebook</a>.</strong>
-
-                            </div>
-
-                            <!--End mc_embed_signup-->
+                        </style>
+                        <div id="mc_embed_signup">
+                            <h2>Stay Updated!</h2>
+                            <p>Subscribe to our newsletter.
+                            <h5>Get a weekly roundup of our top articles and stay informed about the latest and best practices to keep you healthy and strong.</h5>
+                            <form action="https://healthcabal.us1.list-manage.com/subscribe/post?u=b3c0b9b27da524abe9acfd0df&amp;id=6749df06cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <div id="mc_embed_signup_scroll" style="width: 100%;">
+                                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3c0b9b27da524abe9acfd0df_6749df06cb" tabindex="-1" value=""></div>
+                                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #00323d;"></div>
+                                </div>
+                            </form>
+                            <strong class="center">Follow us on <a href="https://twitter.com/healthcabal" target="_blank">Twitter</a> and <a href="https://facebook.com/healthcabal" target="_blank"> Facebook</a>.</strong>
 
                         </div>
-                    </div>
 
+                        <!--End mc_embed_signup-->
+
+                    </div>
                 </div>
 
             </div>
 
+        </div>
 
-            <div class="col-md ad-sidebar" style="margin: 0 auto; width:300px">
-                <!--Trying to navigate social interaction during a summer-->
 
-                <a href="https://wellxo.health" target="_blank"><img src="https://z-p3-scontent-los2-1.xx.fbcdn.net/v/t1.6435-9/187692988_3818908811541305_6910330521458322189_n.png?_nc_cat=109&ccb=1-3&_nc_sid=973b4a&_nc_ohc=eRlhDliJ108AX_iqcBB&_nc_ht=z-p3-scontent-los2-1.xx&oh=41cd2c85f28ac557ba78abd634871139&oe=60D12205"></a>
-            </div>
+        <div class="col-md ad-sidebar" style="margin: 0 auto; width:300px">
+            <!--Trying to navigate social interaction during a summer-->
+
+            <a href="!#"><img src="https://z-p3-scontent-los2-1.xx.fbcdn.net/v/t1.6435-9/187692988_3818908811541305_6910330521458322189_n.png?_nc_cat=109&ccb=1-3&_nc_sid=973b4a&_nc_ohc=eRlhDliJ108AX_iqcBB&_nc_ht=z-p3-scontent-los2-1.xx&oh=41cd2c85f28ac557ba78abd634871139&oe=60D12205"></a>
         </div>
     </div>
+</div>
 
 
 
 
 
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
 
 
-            <?php
-            if (!empty($postData['post_child_cat']) || $postData['post_child_cat'] !== 0 || $postData['post_child_cat'] !== NULL) {
+        <?php
+        if (!empty($postData['post_child_cat']) || $postData['post_child_cat'] !== 0 || $postData['post_child_cat'] !== NULL) {
 
-                $tableName = "hc_posts";
-                $columnName = 'post_child_cat';
-                $start = 0;
-                $end = 8;
-                $value = $postData['post_child_cat'];
-                $posst = $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end);
-                //var_dump($posst);die();
-                $dumpSize = sizeof($posst);
-                //echo $dumpSize;
-                $i = 0;
-                while ($i < $dumpSize) {
-                    $postLink = $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_slug'];
-                    echo '
+
+            $post_category_id = $postData['post_category'];
+            $queryRelated = "SELECT * FROM hc_posts WHERE post_category = $post_category_id LIMIT 0,7";
+            $runQuery = $conn->query($queryRelated);
+            while ($similarPosts = $runQuery->fetch_assoc()) {
+                echo '
             <div class="row col-md-3 col-sm-12" style="padding-right:20px">
             <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
-            <a href="' . $postLink . '">    
+            <a href="' . $homeurl . $similarPosts["post_slug"] . '">    
             <div>
-                    <img src="' . $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_featured_img'] . '" class="homefeaturedimgs">
+                    <img src="' . $similarPosts['post_featured_img'] . '" class="homefeaturedimgs">
                 </div>
                 <div class="posttitle mobile-related" style="padding:20px"><br>
-                    <p>Test Category</p>
-                    <h5 class="grow titletext mt-1">' . $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_title'] . '</h5>
+                    <!--p>Test Category</p-->
+                    <h5 class="grow titletext mt-1">' . $similarPosts['post_title'] . '</h5>
 
                 </div>
                 </a>
             </div>
 
         </div>';
-                    // $postHandler->runrelated($conn, $tableName, $columnName, $value, $start, $end)[$i]['post_title']."<br>";
-                    $i++;
-                }
-            } else {
-                $postCat = $postData['post_category'];
-                echo "parent";
             }
-            ?>
+        }
+        ?>
 
 
 
-        </div>
     </div>
+</div>
 
 
 <?php
 
 
 
-    require_once("inc/footer.php");
-    die();
-} elseif (!isset($_REQUEST['post_slug'])) {
-    $title = "Healthcabal - Reimagining Healthcare Content";
-    require_once("inc/mainheader.php");
-    require_once("classes/posts.php");
-    $value = 1;
-    $tablename = "hc_posts";
-    $columnName = "post_home_hero";
+        require_once("inc/footer.php");
+        die();
+    } elseif (!isset($_REQUEST['post_slug'])) {
+        $title = "Healthcabal - Reimagining Healthcare Content";
+        require_once("inc/mainheader.php");
+        require_once("classes/posts.php");
+        $value = 1;
+        $tablename = "hc_posts";
+        $columnName = "post_home_hero";
 
 
 
@@ -230,7 +227,7 @@ if ($conn->affected_rows > 0) {
 
                 <div class="col-sm">
                     <br>
-                    <h5 class="headtext"> <a href="http://wellxo.health" target="_blank" style="color:white"> Talk With a Doctor</a></h5>
+                    <h5 class="headtext"> <a href="!#" target="_blank" style="color:white"> Talk With a Doctor</a></h5>
                     <p class="headsub"><span class="icon icon-message"></span> Chat | <span class="icon icon-phone"></span> Voice | <span class="icon icon-camera-video"></span> Video</p>
 
                 </div>
@@ -250,8 +247,33 @@ if ($conn->affected_rows > 0) {
                     </div>
                     <div id="homefeaturedtitle">
                         <!--h6 class="headsub">CANCERS</h6--->
-                        <h4 class="grow titletext"><?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_title"); ?></h4>
 
+                        <h4 class="grow titletext"><?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_title"); ?></h4>
+                        <div style="position: absolute; 
+                bottom: 0; 
+                width: 100%; 
+                height: 50px; "> <?php
+
+                                    $query = "SELECT * FROM hc_posts WHERE post_home_hero = 1";
+                                    $result = $conn->query($query);
+                                    $featuredPostInfo = $result->fetch_assoc();
+                                    if ($featuredPostInfo['post_author'] == 0) {
+                                        echo "Medically reviewed by " . $featuredPostInfo['fact_checked_by'] . ", MD";
+                                    } else {
+                                        $author_id = $featuredPostInfo['post_author'];
+                                        $query = "SELECT * FROM hc_users WHERE ID = " . $author_id;
+                                        $result = $conn->query($query);
+                                        $authorInfo = $result->fetch_assoc();
+                                        if (empty($authorInfo['user_prefix'])) {
+                                            $title = "";
+                                        } else {
+                                            $title = ", " . $authorInfo['user_prefix'];
+                                        }
+                                        echo "By " . $authorInfo['user_fname'] . " " . $authorInfo['user_lname'];
+                                    }
+
+                                    ?>
+                        </div>
                     </div>
                 </a>
 
@@ -534,14 +556,14 @@ if ($conn->affected_rows > 0) {
 
         </div>
     </div>
-<?php
+    <?php
 
-    require_once("inc/footer.php");
-} else {
-    $title = "404 - Page Not Found";
-    require_once("inc/mainheader.php");
-    require_once("404.php");
-    require_once("inc/footer.php");
-}
-//require_once("inc/footer.php");
-?>
+        require_once("inc/footer.php");
+    } else {
+        $title = "404 - Page Not Found";
+        require_once("inc/mainheader.php");
+        require_once("404.php");
+        require_once("inc/footer.php");
+    }
+    //require_once("inc/footer.php");
+    ?>`

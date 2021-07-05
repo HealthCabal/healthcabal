@@ -301,10 +301,11 @@
         @media (max-width: 991.98px) {
 
             .static-hero {
-            height: auto;
-            margin-top:50px;
-            background-color: #00323D;
-        }
+                height: auto;
+                margin-top: 50px;
+                background-color: #00323D;
+            }
+
             .featured-conditions {
                 height: 150px;
                 text-align: center;

@@ -122,6 +122,31 @@
             color: darkslategrey
         }
 
+        ul li:not(.footer-list)::before {
+            content: "";
+            display: block;
+            float: left;
+            background-color: #00323d !important;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: 7px;
+            margin-right: 10px
+        }
+
+        .series-buttons {
+            width: 100%;
+            background-color: #053641 !important;
+            color: white;
+            border-radius: 20px 20px 20px 20px;
+            border: rgb(5, 54, 65);
+            margin-top: 20px;
+        }
+
+        .active-class {
+            background-color: #03e4c4 !important;
+        }
+
         .articleheader {
             font-family: 'Archivo Black', sans-serif;
         }
@@ -301,7 +326,7 @@
                 margin-bottom: 200px;
             }
 
-            .mobile-related{
+            .mobile-related {
                 margin: 0 auto;
             }
 

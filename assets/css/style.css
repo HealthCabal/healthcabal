@@ -12,6 +12,8 @@ body {
 	color: #999999
 }
 
+
+
 iframe {
 	border: none
 }
@@ -9904,7 +9906,7 @@ blockquote:before {
 	content: ""
 }
 
-.xs-list.round li:before {
+.xs-list.round li:before:not(.footer-list) {
 	content: "";
 	display: block;
 	float: left;
