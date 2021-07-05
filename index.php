@@ -310,7 +310,7 @@
 
 
             </div>
-            <div class="col-md-3 shadow-right" style="height:490px; margin-top:10px; border-radius:10px 10px 10px 0px; background-color: #BAF8FF">
+            <div class="col-md-3 shadow-right" id="mostpopular">
                 <h4 style="padding-top:10px">Check out the most popular topics</h4>
                 <p style="color:black">These are the most-read topics at the moment.</p>
 

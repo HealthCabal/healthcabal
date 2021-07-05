@@ -110,12 +110,20 @@
             color: darkslategrey
         }
 
+        #mostpopular {
+                height: 490px;
+                margin-top: 10px;
+                border-radius: 10px 10px 10px 0px;
+                background-color: #BAF8FF;
+                /* margin-top: 50px; */
+            }
+
         .author-badge {
             position: absolute;
             bottom: 0;
             width: 100%;
             height: 50px;
-            border: 1px solid red; 
+            border: 1px solid red;
         }
 
         .h6 {
@@ -315,6 +323,14 @@
                 background-color: white;
                 overflow: hidden;
                 height: auto;
+            }
+
+            #mostpopular {
+                height: 490px;
+                margin-top: 10px;
+                border-radius: 10px 10px 10px 0px;
+                background-color: #BAF8FF;
+                margin-top: 50px;
             }
 
 
