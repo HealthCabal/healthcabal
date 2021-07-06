@@ -111,12 +111,12 @@
         }
 
         #mostpopular {
-                height: 490px;
-                margin-top: 10px;
-                border-radius: 10px 10px 10px 0px;
-                background-color: #BAF8FF;
-                /* margin-top: 50px; */
-            }
+            height: 490px;
+            margin-top: 10px;
+            border-radius: 10px 10px 10px 0px;
+            background-color: #BAF8FF;
+            /* margin-top: 50px; */
+        }
 
         .author-badge {
             position: absolute;
@@ -421,6 +421,15 @@
 
         .font-5 {
             font-size: 40px
+        }
+
+
+        /* Onyii's CSS code */
+
+      
+
+        .healthcondition-tile-content {
+            font-size: 17px;
         }
     </style>
     <header class="xs-header header-style9 sticky-top" style="background-color: white;">

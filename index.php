@@ -251,25 +251,25 @@
                         <h4 class="grow titletext"><?php $postHandler->featuredPostData($conn, $value, $columnName, $tablename, "post_title"); ?></h4>
                         <p> <?php
 
-                                    $query = "SELECT * FROM hc_posts WHERE post_home_hero = 1";
-                                    $result = $conn->query($query);
-                                    $featuredPostInfo = $result->fetch_assoc();
-                                    if ($featuredPostInfo['post_author'] == 0) {
-                                        echo "Medically reviewed by " . $featuredPostInfo['fact_checked_by'] . ", MD";
-                                    } else {
-                                        $author_id = $featuredPostInfo['post_author'];
-                                        $query = "SELECT * FROM hc_users WHERE ID = " . $author_id;
-                                        $result = $conn->query($query);
-                                        $authorInfo = $result->fetch_assoc();
-                                        if (empty($authorInfo['user_prefix'])) {
-                                            $title = "";
-                                        } else {
-                                            $title = ", " . $authorInfo['user_prefix'];
-                                        }
-                                        echo "By " . $authorInfo['user_fname'] . " " . $authorInfo['user_lname'];
-                                    }
+                            $query = "SELECT * FROM hc_posts WHERE post_home_hero = 1";
+                            $result = $conn->query($query);
+                            $featuredPostInfo = $result->fetch_assoc();
+                            if ($featuredPostInfo['post_author'] == 0) {
+                                echo "Medically reviewed by " . $featuredPostInfo['fact_checked_by'] . ", MD";
+                            } else {
+                                $author_id = $featuredPostInfo['post_author'];
+                                $query = "SELECT * FROM hc_users WHERE ID = " . $author_id;
+                                $result = $conn->query($query);
+                                $authorInfo = $result->fetch_assoc();
+                                if (empty($authorInfo['user_prefix'])) {
+                                    $title = "";
+                                } else {
+                                    $title = ", " . $authorInfo['user_prefix'];
+                                }
+                                echo "By " . $authorInfo['user_fname'] . " " . $authorInfo['user_lname'];
+                            }
 
-                                    ?>
+                            ?>
                         </p>
                     </div>
                 </a>
@@ -395,11 +395,102 @@
         <br>
         <div class="row">
             <br>
-            <h5 class="titletext">FEATURED HEALTH CONDITIONS</h5>
+            <!--h5 class="titletext">FEATURED HEALTH CONDITIONS</h5-->
         </div>
     </div>
 
-    <div class="container" id="desktopconditions">
+
+    <div class="featuredhealth-conditions">
+        <h5 class="featuredhealth-conditions-features titletext">FEATURED HEALTH CONDITIONS</h5>
+
+        <div class="featuredhealth-conditions-section">
+
+
+
+            <div class="featuredhealth-conditions-content">
+                <div class="featuredhealth-conditions-content-sub">
+                    <img src="assets/images/hc_heart-attack.png" alt="Heart attack" class="featuredhealth-conditions-content-image">
+                </div>
+
+                <div class="healthcondition-title">
+                    <span class="healthcondition-tile-content"><strong>HEART ATTACK</strong></span>
+                    <!-- <p class="featuredhealth-conditions-content-title">HEART ATTACK -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="featuredhealth-conditions-content">
+                <div class="featuredhealth-conditions-content-sub">
+                    <img src="assets/images/hc_diabetes.png" alt="Diabetes" class="featuredhealth-conditions-content-image">
+                </div>
+
+                <div class="healthcondition-title">
+                    <span class="healthcondition-tile-content"><strong>DIABETES</strong></span>
+                    <!-- <p class="featuredhealth-conditions-content-title">HEART ATTACK -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="featuredhealth-conditions-content">
+                <div class="featuredhealth-conditions-content-sub">
+                    <img src="assets/images/hc_cancer.png" alt="Cancer" class="featuredhealth-conditions-content-image">
+                </div>
+
+                <div class="healthcondition-title">
+                    <span class="healthcondition-tile-content"><strong>CANCER</strong></span>
+                    <!-- <p class="featuredhealth-conditions-content-title">HEART ATTACK -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="featuredhealth-conditions-content">
+                <div class="featuredhealth-conditions-content-sub">
+                    <img src="assets/images/hc_stroke.png" alt="Stroke" class="featuredhealth-conditions-content-image">
+                </div>
+
+                <div class="healthcondition-title">
+                    <span class="healthcondition-tile-content"><strong>STROKE</strong></span>
+                    <!-- <p class="featuredhealth-conditions-content-title">HEART ATTACK -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="featuredhealth-conditions-content">
+                <div class="featuredhealth-conditions-content-sub">
+                    <img src="assets/images/hc_fever.png" alt="Fever" class="featuredhealth-conditions-content-image">
+                </div>
+
+                <div class="healthcondition-title">
+                    <span class="healthcondition-tile-content"><strong>FEVER</strong></span>
+                    <!-- <p class="featuredhealth-conditions-content-title">HEART ATTACK -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="featuredhealth-conditions-content">
+                <div class="featuredhealth-conditions-content-sub">
+                    <img src="assets/images/hc_std.png" alt="STDs" class="featuredhealth-conditions-content-image">
+                </div>
+
+                <div class="healthcondition-title">
+                    <span class="healthcondition-tile-content"><strong>STDs</strong></span>
+                    <!-- <p class="featuredhealth-conditions-content-title">HEART ATTACK -->
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--div class="container" id="desktopconditions">
         <div class="row">
             <div class="col-sm featured-conditions mr-2">
                 <img class="img-fluid featured-conditions" src="assets/images/hc_heart-attack.png">
@@ -426,10 +517,10 @@
                 <h6 class="titletext center">STDs</h6>
             </div>
         </div>
-    </div>
+    </div-->
 
 
-    <div class="container" id="mobileconditions">
+    <!--div class="container" id="mobileconditions">
         <div class="row">
             <div class="col-sm text-center">
                 <img style="border-radius:50%; height:100px" src="assets/images/hc_heart-attack.png">
@@ -467,7 +558,7 @@
                 <h6 class="h6">STDs</h6>
             </div>
         </div>
-    </div>
+    </div-->
 
 
     </div>
