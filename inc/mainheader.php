@@ -425,8 +425,106 @@
 
 
         /* Onyii's CSS code */
+        .featuredhealth-conditions {
+            width: 80%;
+            margin-left: 10%;
+        }
 
-      
+        @media screen and (max-width: 800px) {
+            .featuredhealth-conditions {
+                width: 100%;
+                margin-left: 0px;
+            }
+        }
+
+        .featuredhealth-conditions-features {
+            font-size: large;
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .featuredhealth-conditions-features {
+                width: 100%;
+                margin-left: 0px;
+                text-align: center;
+            }
+        }
+
+        .featuredhealth-conditions-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: 800px) {
+            .featuredhealth-conditions-section {
+                flex-direction: column;
+                flex-flow: wrap;
+                justify-content: space-around;
+            }
+        }
+
+        .featuredhealth-conditions-content {
+            width: 16%;
+        }
+
+        @media screen and (max-width: 670px) {
+            .featuredhealth-conditions-content {
+                width: 40%;
+                /* background-color: blue; */
+            }
+        }
+
+        /* @media screen and (min-width: 671px and max-width 800px) {
+    .featuredhealth-conditions-content{
+        width: 30%;
+        background-color: blue;
+    }
+} */
+
+
+        .featuredhealth-conditions-content-sub {
+            width: 100%;
+            height: 80%;
+            background-color: white;
+            text-align: center;
+            border-radius: 8px;
+
+        }
+
+
+        @media screen and (max-width: 800px) {
+            .featuredhealth-conditions-content-sub {
+                background-color: unset;
+                height: 80%;
+            }
+        }
+
+
+        .featuredhealth-conditions-content-image {
+            width: 70%;
+            /* height: 90%; */
+            margin-top: 3.5%;
+        }
+
+        @media screen and (max-width: 800px) {
+            .featuredhealth-conditions-content-image {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                /* width: 60%; */
+                /* height: 90%; */
+            }
+        }
+
+        .healthcondition-title {
+            height: 20%;
+            text-align: center;
+        }
+
+        .healthcondition-tile-content {
+            font-size: 17px;
+        }
+
+
 
         .healthcondition-tile-content {
             font-size: 17px;
