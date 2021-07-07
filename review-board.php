@@ -8,7 +8,7 @@ if (isset($_REQUEST['slug'])) {
     $results = $result->fetch_assoc();
 }
 
-$title = "HealthCabal - " . $results['user_fname'] . " " . $results['user_lname'] . ", ". $results['user_fname'] ;
+$title = "HealthCabal - " . $results['user_fname'] . " " . $results['user_lname'] . ", ". $results['user_prefix'] ;
 require_once("inc/mainheader.php");
 ?>
 <?php
