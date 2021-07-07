@@ -1,4 +1,3 @@
-<!-- get_header('Page Name','Title')-->
 <!doctype html>
 <html lang="en">
 

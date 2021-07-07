@@ -1,4 +1,4 @@
-`<?php
+<?php
 
     require_once("classes/config.php");
     require_once('classes/posts.php');
@@ -654,4 +654,4 @@
         require_once("inc/footer.php");
     }
     //require_once("inc/footer.php");
-    ?>`
+    ?>
