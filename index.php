@@ -38,7 +38,7 @@
             <p> <?php
 
                 if ($postData['post_author'] == 0) {
-                    echo "Medically reviewed by <strong>" . $postData['fact_checked_by'] . "</strong><br>";
+                    echo "Medically reviewed by <strong>" . $postData['fact_checked_by'] . ", MD</strong><br>";
                     $publishedDate = strtotime($postData['post_date']);
                     echo date('F j, Y', $publishedDate);
                     //echo $postData['post_date'];
