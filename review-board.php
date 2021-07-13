@@ -9,6 +9,7 @@ if (isset($_REQUEST['slug'])) {
 }
 
 $title = "HealthCabal - " . $results['user_fname'] . " " . $results['user_lname'] . ", ". $results['user_prefix'] ;
+$description = "";
 require_once("inc/mainheader.php");
 ?>
 <?php

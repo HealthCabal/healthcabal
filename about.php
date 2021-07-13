@@ -1,5 +1,9 @@
 <?php
 $title = "HealthCabal - About Us";
+$description = "We are an online resource for reliable, understandable, and up-to-date
+health information on the medical topics that matter most to you. We love
+simplifying medical jargons by taking a human approach to health and
+wellness content publishing.";
 require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>

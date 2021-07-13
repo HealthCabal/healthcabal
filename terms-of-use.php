@@ -1,5 +1,6 @@
 <?php
 $title = "HealthCabal - Terms of Use";
+$cdescription = "The information set out here contstitute our Terms of Use, and by using this website, you accept them and agree to abide by them.";
 require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>

@@ -26,8 +26,7 @@
 
 
     <meta name="keywords" content="healthcabal, health cabal, health, cabal, health journal">
-    <meta name="description" content="HealthCabal is Africa's leading destination for unbiased medical news and information,
-     providing clear and credible health news and expert advice.">
+    <meta name="description" content="<?php echo $description; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" type="text/css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CRoboto:400,500,700,900%7CPlayfair+Display:400,700,700i,900,900i%7CWork+Sans:400,500,600,700" rel="stylesheet">

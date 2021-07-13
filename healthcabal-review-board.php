@@ -1,5 +1,6 @@
 <?php
 $title = "HealthCabal - Medical Review Board";
+$keywords = "Our medical review board is made up of seasoned medical professionals who review every piece of content on HealthCabal for medical accuracy and ensure that information here is up-to-date.";
 require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>
