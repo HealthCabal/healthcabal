@@ -1,5 +1,6 @@
 <?php
 $title = "HealthCabal - Our Editorial Process";
+$description = "Our editorial process has been developed to ensure information of the highest quality is delivered on our platform.";
 require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>

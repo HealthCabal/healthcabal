@@ -199,7 +199,7 @@
         die();
     } elseif (!isset($_REQUEST['post_slug'])) {
         $title = "Healthcabal - Reimagining Health Information";
-        $decription = "HealthCabal is a leading health information website, providing unbiased health information that is written and verified by health professionals.";
+        $description = "HealthCabal is a leading health information website, providing unbiased health information that is written and verified by health professionals.";
         require_once("inc/mainheader.php");
         require_once("classes/posts.php");
         $value = 1;
