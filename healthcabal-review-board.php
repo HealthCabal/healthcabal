@@ -1,6 +1,7 @@
 <?php
 $title = "HealthCabal - Medical Review Board";
-$keywords = "Our medical review board is made up of seasoned medical professionals who review every piece of content on HealthCabal for medical accuracy and ensure that information here is up-to-date.";
+$keywords = "healthcabal, medical review board, health";
+$description = "Our medical review board is made up of seasoned medical professionals who review every piece of content on HealthCabal for medical accuracy and ensure that information here is up-to-date.";
 require_once("classes/config.php");
 require_once("inc/mainheader.php");
 ?>
@@ -40,7 +41,7 @@ require_once("inc/mainheader.php");
             <div class="container mt-5">
                 <div class="row">
                     <?php
-                    $fetchReviewers = "SELECT * FROM hc_users WHERE user_status = 1 AND user_type = 'reviewer' LIMIT 4";
+                    $fetchReviewers = "SELECT * FROM hc_users WHERE user_status = 1 AND user_type = 'reviewer' ORDER BY RAND()";
                     $getReviewers = $conn->query($fetchReviewers);
                     while ($reviewBoard = $getReviewers->fetch_object()) {
                         echo '

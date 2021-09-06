@@ -7,8 +7,11 @@ if (isset($_REQUEST['slug'])) {
     $result = $conn->query($fetchMember);
     $results = $result->fetch_assoc();
 }
+if(!empty($results['user_prefix'] || $results['user_prefix'] !== NULL || $results['user_prefix'] !== "NULL")){
+    $postfix = ", ".$results['user_prefix'];
+}
 
-$title = "HealthCabal - " . $results['user_fname'] . " " . $results['user_lname'] . ", ". $results['user_prefix'] ;
+$title = "HealthCabal - " . $results['user_fname'] . " " . $results['user_lname'] . $postfix;
 $description = "";
 require_once("inc/mainheader.php");
 ?>

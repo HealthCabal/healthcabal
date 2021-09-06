@@ -144,7 +144,7 @@
         <div class="col-md ad-sidebar" style="margin: 0 auto; width:300px">
             <!--Trying to navigate social interaction during a summer-->
 
-            <a href="!#"><img src="https://z-p3-scontent-los2-1.xx.fbcdn.net/v/t1.6435-9/187692988_3818908811541305_6910330521458322189_n.png?_nc_cat=109&ccb=1-3&_nc_sid=973b4a&_nc_ohc=eRlhDliJ108AX_iqcBB&_nc_ht=z-p3-scontent-los2-1.xx&oh=41cd2c85f28ac557ba78abd634871139&oe=60D12205"></a>
+            <a href="!#"><img src="https://res.cloudinary.com/healthcabal/image/upload/v1630961783/articleimages/WellXo-banner_zrvcze.png" style="position:static"></a>
         </div>
     </div>
 </div>
@@ -223,7 +223,7 @@
                 <div class="col-sm-4">
                     <br>
                     <h5 class="headtext"> Written By Health Professionals</h5>
-                    <p class="headsub">Reviewed By certified physicians</p>
+                    <p class="headsub">Reviewed By Certified Physicians</p>
                 </div>
 
                 <div class="col-sm">
@@ -256,7 +256,7 @@
                             $result = $conn->query($query);
                             $featuredPostInfo = $result->fetch_assoc();
                             if ($featuredPostInfo['post_author'] == 0) {
-                                echo "Medically reviewed by " . $featuredPostInfo['fact_checked_by'] . ", MD";
+                                echo "Medically Reviewed By " . $featuredPostInfo['fact_checked_by'] . ", MD";
                             } else {
                                 $author_id = $featuredPostInfo['post_author'];
                                 $query = "SELECT * FROM hc_users WHERE ID = " . $author_id;
@@ -621,7 +621,7 @@
                 <div class="row">
 
                     <?php
-                    $fetchReviewers = "SELECT * FROM hc_users WHERE user_status = 1 AND user_type = 'reviewer' LIMIT 4";
+                    $fetchReviewers = "SELECT * FROM hc_users WHERE user_status = 1 AND user_type = 'reviewer' ORDER BY RAND LIMIT 4";
                     $getReviewers = $conn->query($fetchReviewers);
                     while ($reviewBoard = $getReviewers->fetch_object()) {
                         echo '
