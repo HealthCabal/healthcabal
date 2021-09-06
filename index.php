@@ -621,7 +621,7 @@
                 <div class="row">
 
                     <?php
-                    $fetchReviewers = "SELECT * FROM hc_users WHERE user_status = 1 AND user_type = 'reviewer' ORDER BY RAND LIMIT 4";
+                    $fetchReviewers = "SELECT * FROM hc_users WHERE user_status = 1 AND user_type = 'reviewer' ORDER BY RAND() LIMIT 4";
                     $getReviewers = $conn->query($fetchReviewers);
                     while ($reviewBoard = $getReviewers->fetch_object()) {
                         echo '
