@@ -64,14 +64,12 @@ class Posts extends Crud
             echo '
             <div class="row col-md col-sm-12">
             <div class="col-md top-right-col  shadow-right second-row-home">
-            <img src="' . $featuredPosts['post_featured_img'] . '" alt="' . $featuredPosts['post_title'] . '">
+            <img src="' . $featuredPosts['post_featured_img'] . '" alt="' . $featuredPosts['post_title'] . '" height="200" width="300">
                 <div style="height:auto" class="posttitle"><br>
                     <p>' . $featuredPosts['cat_name'] . '</p>
                     <a href="' . $homeurl . $featuredPosts['post_slug'] . '">
-                    <h5 class="grow titletext mt-1"> ' . substr($featuredPosts['post_title'], 0, 40) . ' . . .</h5></a>' .
-                '<p>' .
-                $review_or_author . '
-                     </p>
+                    <h6 class="grow titletext mt-1"> ' . substr($featuredPosts['post_title'], 0, 80) . '</h6></a> 
+                
                 </div>
             </div>
 
