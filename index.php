@@ -293,7 +293,7 @@ if ($conn->affected_rows > 0) {
                     <div style="height: 40px">
                     </div>
                     <?php
-                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 2, 2";
+                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 2, 1";
                     $fetchRight = $conn->query($query);
                     while ($topRight = $fetchRight->fetch_assoc()) {
                         echo ' <div class="homefeaturedimgs">
