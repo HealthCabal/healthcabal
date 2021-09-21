@@ -45,7 +45,7 @@ class Posts extends Crud
     function fetchFeaturedPosts($conn, $start, $end, $homeurl)
     {
         $query = "SELECT hc_posts.ID, hc_posts.post_featured_img, hc_posts.post_category, hc_posts.post_title, hc_posts.post_slug, hc_categories.cat_name, hc_categories.ID, hc_posts.post_author, hc_posts.fact_checked_by FROM hc_posts, hc_categories WHERE hc_categories.ID = hc_posts.post_category AND hc_posts.post_home_featured = 1 ORDER BY hc_posts.ID DESC LIMIT $start, $end";
-        die($query);
+        //die($query);
         $result  = $conn->query($query);
         while ($featuredPosts = $result->fetch_assoc()) {
 
