@@ -1,171 +1,171 @@
 <?php
 
-    require_once("classes/config.php");
-    require_once('classes/posts.php');
+require_once("classes/config.php");
+require_once('classes/posts.php');
 
-    if (isset($_REQUEST['post_slug'])) {
-        $postSlug = $_GET['post_slug'];
-        $fetchPost = "SELECT * FROM  hc_posts WHERE post_slug = '$postSlug'";
-        //die($fetchPost);
-        $result = $conn->query($fetchPost);
-    }
-    if ($conn->affected_rows > 0) {
-        $postData = $result->fetch_array();
-        require_once("inc/articleheader.php");
-        require_once("classes/posts.php");
-    ?>
-<div class="col-lg-12" id="topbar" style="background-color:mintcream; padding-top:0px">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md">
-                <br>
-                <!--img src="https://tpc.googlesyndication.com/simgad/4917489439033249397"-->
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-    </div>
-</div>
-
-<div class="col-lg-12" id="topbar" style="background-color: white;">
-    <div class="container">
-        <div class="row">
-            <?php
-            echo "<p class='h1 text-dark articleheader'>" . $postData['post_title'] . "</p>";
-            ?>
-        </div>
-        <div style="display: inline-block; margin-top:30px; margin-bottom: 30px">
-            <p> <?php
-
-                if ($postData['post_author'] == 0) {
-                    echo "Medically Reviewed By <strong>" . $postData['fact_checked_by'] . ", MD</strong><br>";
-                    $publishedDate = strtotime($postData['post_date']);
-                    echo date('F j, Y', $publishedDate);
-                    //echo $postData['post_date'];
-                } else {
-                    $author = $postData['post_author'];
-                    $author_id = $conn->query('SELECT * FROM hc_users WHERE ID = ' . $author);
-                    $authorName = $author_id->fetch_assoc();
-                    echo "<strong>Written by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . "</strong><br>";
-
-                    $publishedDate = strtotime($postData['post_date']);
-                    echo date('F j, Y', $publishedDate);
-                }
-
-                ?>
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-9">
-            <img class="img-fluid fit-image" src="<?php echo $postData['post_featured_img']; ?>" alt="<?php echo $postData['post_title']; ?>">
-
-
+if (isset($_REQUEST['post_slug'])) {
+    $postSlug = $_GET['post_slug'];
+    $fetchPost = "SELECT * FROM  hc_posts WHERE post_slug = '$postSlug'";
+    //die($fetchPost);
+    $result = $conn->query($fetchPost);
+}
+if ($conn->affected_rows > 0) {
+    $postData = $result->fetch_array();
+    require_once("inc/articleheader.php");
+    require_once("classes/posts.php");
+?>
+    <div class="col-lg-12" id="topbar" style="background-color:mintcream; padding-top:0px">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-3" style="padding-top:30px">
-                    <!--img src=""-->
-                    <?php
-                    $series = array("", "NULL", NULL, 0);
-                    if (!in_array($postData['post_series'], $series)) {
-                        $series = $postData['post_series'];
-                        $query = "SELECT post_series_heading, post_slug FROM hc_posts WHERE post_series = $series ORDER BY series_priority ASC";
-                        //die($query);
-                        $fetchHeadings = $conn->query($query);
-                        while ($seriesHeadings = $fetchHeadings->fetch_assoc()) {
-                            $curURL_s =  "https://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-                            $curURL =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-                            if ($curURL_s == $homeurl . $seriesHeadings['post_slug'] || $curURL ==  $homeurl . $seriesHeadings['post_slug']) {
-                                $activeClass = "active-class";
-                            } else {
-                                $activeClass = "";
-                            }
+                <div class="col-md-2"></div>
+                <div class="col-md">
+                    <br>
+                    <!--img src="https://tpc.googlesyndication.com/simgad/4917489439033249397"-->
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
 
-                            echo '<a href="' . $homeurl . $seriesHeadings['post_slug'] . '"><button class="btn btn-sm series-buttons ' . $activeClass . '">' . $seriesHeadings['post_series_heading'] . '</button></a><br>';
-                        }
+    <div class="col-lg-12" id="topbar" style="background-color: white;">
+        <div class="container">
+            <div class="row">
+                <?php
+                echo "<p class='h1 text-dark articleheader'>" . $postData['post_title'] . "</p>";
+                ?>
+            </div>
+            <div style="display: inline-block; margin-top:30px; margin-bottom: 30px">
+                <p> <?php
+
+                    if ($postData['post_author'] == 0) {
+                        echo "Medically Reviewed By <strong>" . $postData['fact_checked_by'] . ", MD</strong><br>";
+                        $publishedDate = strtotime($postData['post_date']);
+                        echo date('F j, Y', $publishedDate);
+                        //echo $postData['post_date'];
+                    } else {
+                        $author = $postData['post_author'];
+                        $author_id = $conn->query('SELECT * FROM hc_users WHERE ID = ' . $author);
+                        $authorName = $author_id->fetch_assoc();
+                        echo "<strong>Written by " . $authorName['user_fname'] . " " . $authorName['user_lname'] . "</strong><br>";
+
+                        $publishedDate = strtotime($postData['post_date']);
+                        echo date('F j, Y', $publishedDate);
                     }
 
                     ?>
-                </div>
-
-                <div class="col-sm" style="padding-top:30px">
-                    <?php echo $postData['post_content']; ?>
-
+            </div>
+        </div>
+    </div>
 
 
-                    <!--Mailchimp starts here-->
-                    <div class="container" style="background-color: #05e4c0; border-radius: 0px 20px 0px 20px; margin-top: 50px; margin-bottom:20">
-                        <!-- Begin Mailchimp Signup Form -->
-                        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-                        <style type="text/css">
-                            #mc_embed_signup {
-                                background: transparent;
-                                clear: left;
-                                font: 14px Helvetica, Arial, sans-serif;
-                                width: 100%;
-                                color: #00323d;
-                                padding-top: 30px;
-                                padding-bottom: 50px;
-                                /* padding-right: 30px;
-                                    padding-left: 100px; */
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <img class="img-fluid fit-image" src="<?php echo $postData['post_featured_img']; ?>" alt="<?php echo $postData['post_title']; ?>">
+
+
+                <div class="row">
+                    <div class="col-sm-3" style="padding-top:30px">
+                        <!--img src=""-->
+                        <?php
+                        $series = array("", "NULL", NULL, 0);
+                        if (!in_array($postData['post_series'], $series)) {
+                            $series = $postData['post_series'];
+                            $query = "SELECT post_series_heading, post_slug FROM hc_posts WHERE post_series = $series ORDER BY series_priority ASC";
+                            //die($query);
+                            $fetchHeadings = $conn->query($query);
+                            while ($seriesHeadings = $fetchHeadings->fetch_assoc()) {
+                                $curURL_s =  "https://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+                                $curURL =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+                                if ($curURL_s == $homeurl . $seriesHeadings['post_slug'] || $curURL ==  $homeurl . $seriesHeadings['post_slug']) {
+                                    $activeClass = "active-class";
+                                } else {
+                                    $activeClass = "";
+                                }
+
+                                echo '<a href="' . $homeurl . $seriesHeadings['post_slug'] . '"><button class="btn btn-sm series-buttons ' . $activeClass . '">' . $seriesHeadings['post_series_heading'] . '</button></a><br>';
                             }
+                        }
 
-                            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                        ?>
+                    </div>
+
+                    <div class="col-sm" style="padding-top:30px">
+                        <?php echo $postData['post_content']; ?>
+
+
+
+                        <!--Mailchimp starts here-->
+                        <div class="container" style="background-color: #05e4c0; border-radius: 0px 20px 0px 20px; margin-top: 50px; margin-bottom:20">
+                            <!-- Begin Mailchimp Signup Form -->
+                            <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                            <style type="text/css">
+                                #mc_embed_signup {
+                                    background: transparent;
+                                    clear: left;
+                                    font: 14px Helvetica, Arial, sans-serif;
+                                    width: 100%;
+                                    color: #00323d;
+                                    padding-top: 30px;
+                                    padding-bottom: 50px;
+                                    /* padding-right: 30px;
+                                    padding-left: 100px; */
+                                }
+
+                                /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                        </style>
-                        <div id="mc_embed_signup">
-                            <h2>Stay Updated!</h2>
-                            <p>Subscribe to our newsletter.
-                            <h5>Get a weekly roundup of our top articles and stay informed about the latest and best practices to keep you healthy and strong.</h5>
-                            <form action="https://healthcabal.us1.list-manage.com/subscribe/post?u=b3c0b9b27da524abe9acfd0df&amp;id=6749df06cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                <div id="mc_embed_signup_scroll" style="width: 100%;">
-                                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3c0b9b27da524abe9acfd0df_6749df06cb" tabindex="-1" value=""></div>
-                                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #00323d;"></div>
-                                </div>
-                            </form>
-                            <strong class="center">Follow us on <a href="https://twitter.com/healthcabal" target="_blank">Twitter</a> and <a href="https://facebook.com/healthcabal" target="_blank"> Facebook</a>.</strong>
+                            </style>
+                            <div id="mc_embed_signup">
+                                <h2>Stay Updated!</h2>
+                                <p>Subscribe to our newsletter.
+                                <h5>Get a weekly roundup of our top articles and stay informed about the latest and best practices to keep you healthy and strong.</h5>
+                                <form action="https://healthcabal.us1.list-manage.com/subscribe/post?u=b3c0b9b27da524abe9acfd0df&amp;id=6749df06cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll" style="width: 100%;">
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3c0b9b27da524abe9acfd0df_6749df06cb" tabindex="-1" value=""></div>
+                                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #00323d;"></div>
+                                    </div>
+                                </form>
+                                <strong class="center">Follow us on <a href="https://twitter.com/healthcabal" target="_blank">Twitter</a> and <a href="https://facebook.com/healthcabal" target="_blank"> Facebook</a>.</strong>
+
+                            </div>
+
+                            <!--End mc_embed_signup-->
 
                         </div>
-
-                        <!--End mc_embed_signup-->
-
                     </div>
+
                 </div>
 
             </div>
 
-        </div>
 
+            <div class="col-md ad-sidebar article-right-sidebar" style="margin: 0 auto; width:300px">
+                <!--Trying to navigate social interaction during a summer-->
 
-        <div class="col-md ad-sidebar article-right-sidebar" style="margin: 0 auto; width:300px">
-            <!--Trying to navigate social interaction during a summer-->
-
-            <a href="!#"><img src="https://res.cloudinary.com/healthcabal/image/upload/v1630961783/articleimages/WellXo-banner_zrvcze.png" style="position:static"></a>
+                <a href="!#"><img src="https://res.cloudinary.com/healthcabal/image/upload/v1630961783/articleimages/WellXo-banner_zrvcze.png" style="position:static"></a>
+            </div>
         </div>
     </div>
-</div>
 
 
 
 
 
-<div class="container">
-    <div class="row">
+    <div class="container">
+        <div class="row">
 
 
-        <?php
-        if (!empty($postData['post_child_cat']) || $postData['post_child_cat'] !== 0 || $postData['post_child_cat'] !== NULL) {
+            <?php
+            if (!empty($postData['post_child_cat']) || $postData['post_child_cat'] !== 0 || $postData['post_child_cat'] !== NULL) {
 
 
-            $post_category_id = $postData['post_category'];
-            $queryRelated = "SELECT * FROM hc_posts WHERE post_category = $post_category_id LIMIT 0,7";
-            $runQuery = $conn->query($queryRelated);
-            while ($similarPosts = $runQuery->fetch_assoc()) {
-                echo '
+                $post_category_id = $postData['post_category'];
+                $queryRelated = "SELECT * FROM hc_posts WHERE post_category = $post_category_id LIMIT 0,7";
+                $runQuery = $conn->query($queryRelated);
+                while ($similarPosts = $runQuery->fetch_assoc()) {
+                    echo '
             <div class="row col-md-3 col-sm-12" style="padding-right:20px">
             <div class="col-md top-right-col  shadow-right second-row-home" style="height:auto; padding-left:0px; padding-right:0px; padding-top:15px">
             <a href="' . $homeurl . $similarPosts["post_slug"] . '">    
@@ -181,30 +181,30 @@
             </div>
 
         </div>';
+                }
             }
-        }
-        ?>
+            ?>
 
 
 
+        </div>
     </div>
-</div>
 
 
 <?php
 
 
 
-        require_once("inc/footer.php");
-        die();
-    } elseif (!isset($_REQUEST['post_slug'])) {
-        $title = "Healthcabal - Reimagining Health Information";
-        $description = "HealthCabal is a leading health information website, providing unbiased health information that is written and verified by health professionals.";
-        require_once("inc/mainheader.php");
-        require_once("classes/posts.php");
-        $value = 1;
-        $tablename = "hc_posts";
-        $columnName = "post_home_hero";
+    require_once("inc/footer.php");
+    die();
+} elseif (!isset($_REQUEST['post_slug'])) {
+    $title = "Healthcabal - Reimagining Health Information";
+    $description = "HealthCabal is a leading health information website, providing unbiased health information that is written and verified by health professionals.";
+    require_once("inc/mainheader.php");
+    require_once("classes/posts.php");
+    $value = 1;
+    $tablename = "hc_posts";
+    $columnName = "post_home_hero";
 
 
 
@@ -314,18 +314,20 @@
             <div class="col-md-3 shadow-right" id="mostpopular">
                 <h4 style="padding-top:10px">Check out the most popular topics</h4>
                 <p style="color:black">These are the most-read topics at the moment.</p>
-
-                <button class="btn btn-sm home-buttons" style="background-color:#053641">
-                    Stroke
-                </button>
+                <a href="types-of-strokes-complications-and-risk-factors-46472">
+                    <button class="btn btn-sm home-buttons" style="background-color:#053641">
+                        Stroke
+                    </button>
+                </a>
 
                 <button class="home-buttons btn btn-sm " style="background-color:#053641;">
                     High Blood Pressure
                 </button>
-
-                <button class="home-buttons btn btn-sm " style="background-color:#053641">
-                    Diabetes
-                </button>
+                <a href="what-you-need-to-know-about-type-2-diabetes-mellitus-management-35553">
+                    <button class="home-buttons btn btn-sm " style="background-color:#053641">
+                        Diabetes
+                    </button>
+                </a>
 
                 <button class="home-buttons btn btn-sm " style="background-color:#053641">
                     Heart Attack
@@ -410,7 +412,7 @@
 
             <div class="featuredhealth-conditions-content">
                 <div class="featuredhealth-conditions-content-sub">
-                    <img src="assets/images/hc_heart-attack.png" alt="Heart attack" class="featuredhealth-conditions-content-image">
+                    <a href="#"><img src="assets/images/hc_heart-attack.png" alt="Heart attack" class="featuredhealth-conditions-content-image">
                 </div>
 
                 <div class="healthcondition-title">
@@ -422,7 +424,7 @@
 
             <div class="featuredhealth-conditions-content">
                 <div class="featuredhealth-conditions-content-sub">
-                    <img src="assets/images/hc_diabetes.png" alt="Diabetes" class="featuredhealth-conditions-content-image">
+                    <a href="what-you-need-to-know-about-type-2-diabetes-mellitus-management-35553"><img src="assets/images/hc_diabetes.png" alt="Diabetes" class="featuredhealth-conditions-content-image"></a>
                 </div>
 
                 <div class="healthcondition-title">
@@ -446,7 +448,7 @@
 
             <div class="featuredhealth-conditions-content">
                 <div class="featuredhealth-conditions-content-sub">
-                    <img src="assets/images/hc_stroke.png" alt="Stroke" class="featuredhealth-conditions-content-image">
+                    <a href="types-of-strokes-complications-and-risk-factors-46472"><img src="assets/images/hc_stroke.png" alt="Stroke" class="featuredhealth-conditions-content-image"></a>
                 </div>
 
                 <div class="healthcondition-title">
@@ -645,14 +647,14 @@
 
         </div>
     </div>
-    <?php
+<?php
 
-        require_once("inc/footer.php");
-    } else {
-        $title = "404 - Page Not Found";
-        require_once("inc/mainheader.php");
-        require_once("404.php");
-        require_once("inc/footer.php");
-    }
-    //require_once("inc/footer.php");
-    ?>
+    require_once("inc/footer.php");
+} else {
+    $title = "404 - Page Not Found";
+    require_once("inc/mainheader.php");
+    require_once("404.php");
+    require_once("inc/footer.php");
+}
+//require_once("inc/footer.php");
+?>
