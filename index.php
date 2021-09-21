@@ -141,7 +141,7 @@
         </div>
 
 
-        <div class="col-md ad-sidebar" style="margin: 0 auto; width:300px">
+        <div class="col-md ad-sidebar article-right-sidebar" style="margin: 0 auto; width:300px">
             <!--Trying to navigate social interaction during a summer-->
 
             <a href="!#"><img src="https://res.cloudinary.com/healthcabal/image/upload/v1630961783/articleimages/WellXo-banner_zrvcze.png" style="position:static"></a>
@@ -279,7 +279,7 @@
             <div class="row col-md-3 col-sm-12">
                 <div class="col-md top-right-col  shadow-right homeboxes" style="height:490px;" id="home-right">
                     <?php
-                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 0, 1";
+                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 1, 1";
                     $fetchRight = $conn->query($query);
                     while ($topRight = $fetchRight->fetch_assoc()) {
                         echo ' <div class="homefeaturedimgs">
@@ -293,7 +293,7 @@
                     <div style="height: 40px">
                     </div>
                     <?php
-                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 1, 2";
+                    $query = "SELECT * FROM hc_posts WHERE post_home_featured = 1 AND post_status = 1 ORDER BY ID DESC LIMIT 2, 21";
                     $fetchRight = $conn->query($query);
                     while ($topRight = $fetchRight->fetch_assoc()) {
                         echo ' <div class="homefeaturedimgs">
